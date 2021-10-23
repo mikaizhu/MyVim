@@ -35,7 +35,14 @@ nvim init.vim
 source $HOME/.config/nvim/fast-move.vim
 ```
 
-## 插件安装
+## 插件安装方法
+
+我希望使用的功能：
+
+- vim能编辑所有程序，能搜索文件(fzf)
+- vim中能调用命令行(floaterm)
+- vim中能debug(vim spector)
+- vim中各种函数可以进行文件跳转(TODO)
 
 使用vim plug进行插件管理：
 
@@ -70,10 +77,52 @@ call plug#end()
    则是不能使用插件命令的
 ```
 
+## 复制粘贴插件
+
+有时候需要将服务器上的文本复制粘贴到本地，对于Mac OS最好的插件就是osyank
 
 - osyank, 服务器上复制，Mac本地可以粘贴: https://github.com/ojroques/vim-oscyank
 
+## vim字体插件安装
 
+推荐字体Hack Nerd font：https://github.com/ryanoasis/vim-devicons
+
+下载方式：
+
+```
+cd ~/.config/nvim && mkdir patched-fonts
+cd patched-fonts
+git init
+git remote add origin https://github.com/ryanoasis/vim-devicons
+git config core.sparsecheckout true
+echo "Hack" >> .git/info/sparse-checkout
+git pull --depth 1 origin master 
+cd ..
+chmod +x install.sh
+./install.sh Hack
+```
+
+同时本地也要进行同样设置，如果服务器安装了这个字体，但是本地iterm2没有安装，还
+是不能显示.
+
+如果是在服务器上操作完，本地操作如上
+
+## 主题安装
+
+主题推荐：https://github.com/morhetz/gruvbox/wiki/Installation
+
+```
+vi init.vim
+Plug 'morhetz/gruvbox'
+autocmd vimenter * ++nested colorscheme gruvbox
+```
+
+# TODO
+
+- [ ] vim terminal config
+- [ ] vim code language config
+- [ ] vim code complete config
+- [ ] other plug
 
 # 常用网站
 
@@ -81,12 +130,6 @@ vim插件安装网站：https://vimawesome.com/
 
 # vim 插件安装
 
-我希望使用的功能：
-
-- vim能编辑所有程序，能搜索文件(fzf)
-- vim中能调用命令行(floaterm)
-- vim中能debug(vim spector)
-- vim中各种函数可以进行文件跳转(TODO)
 
 # fzf安装和常用命令说明
 
