@@ -93,7 +93,7 @@ call plug#end()
 cd ~/.config/nvim && mkdir patched-fonts
 cd patched-fonts
 git init
-git remote add origin https://github.com/ryanoasis/vim-devicons
+git remote add origin https://github.com/ryanoasis/nerd-fonts
 git config core.sparsecheckout true
 echo "Hack" >> .git/info/sparse-checkout
 git pull --depth 1 origin master 
