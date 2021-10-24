@@ -117,7 +117,7 @@ Plug 'morhetz/gruvbox'
 autocmd vimenter * ++nested colorscheme gruvbox
 ```
 
-## vim terminal config
+## vim terminal config | floaterm
 
 - 使用的插件为：https://github.com/voldikss/vim-floaterm
 
@@ -133,16 +133,15 @@ let g:floaterm_width=0.5
 "让terminal打开默认的是当前项目的目录下"
 let g:floaterm_borderchars='.root'
 
-nnoremap <Leader>fn :FloatermNew<CR>
+nnoremap <Leader>fn :FloatermNew
 nnoremap <Leader>sh :FloatermShow<CR>
 nnoremap <Leader>fk :FloatermKill<CR>
 nnoremap <Leader>fs :FloatermSend
 vnoremap <Leader>fs :FloatermSend<CR>
 
-nnoremap <silent> <C-[> :FloatermToggle<CR>
+nnoremap <Leader>ft :FloatermToggle<CR>
 "进入命令行模式后，要用tnoremap进行映射
 tnoremap <silent> <C-[> <C-\><C-n>:FloatermToggle<CR>
-tnoremap <silent> <Esc> <C-\><C-n>:FloatermToggle<CR>
 " 从termial切换窗口, 有时候会和tmux按键冲突，可以替换成其他的
 tnoremap <silent> <C-b>h <C-\><C-n><C-w>h
 nnoremap <silent> <C-b>l <C-w>l
@@ -161,10 +160,13 @@ Vjj
 
 # TODO
 
-- [ ] vim terminal config
-- [ ] vim code language config
+- [x] vim terminal config
+- [ ] vim code language config eg: python cpp
 - [ ] vim code complete config
-- [ ] other plug
+- [ ] vim markdown plugin
+- [ ] vim fzf
+- [ ] vim teloscop
+- [ ] vim coc nvim 
 
 # 常用网站
 
@@ -192,7 +194,6 @@ vi ** + tab
 :Rg 模糊搜索，可以查看文件内容
 ```
 
-# 命令行floaterm调用说明
 
 # vimspector安装和常用命令说明
 
