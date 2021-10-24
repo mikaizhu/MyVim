@@ -117,6 +117,48 @@ Plug 'morhetz/gruvbox'
 autocmd vimenter * ++nested colorscheme gruvbox
 ```
 
+## vim terminal config
+
+- 使用的插件为：https://github.com/voldikss/vim-floaterm
+
+使用配置如下：
+
+```
+" floaterm config
+" 设置shell不是浮动，而是右边option：split vsplit float
+let g:floaterm_wintype='vsplit'
+" 设置为一半
+let g:floaterm_height=0.5
+let g:floaterm_width=0.5
+"让terminal打开默认的是当前项目的目录下"
+let g:floaterm_borderchars='.root'
+
+nnoremap <Leader>fn :FloatermNew<CR>
+nnoremap <Leader>sh :FloatermShow<CR>
+nnoremap <Leader>fk :FloatermKill<CR>
+nnoremap <Leader>fs :FloatermSend
+vnoremap <Leader>fs :FloatermSend<CR>
+
+nnoremap <silent> <C-[> :FloatermToggle<CR>
+"进入命令行模式后，要用tnoremap进行映射
+tnoremap <silent> <C-[> <C-\><C-n>:FloatermToggle<CR>
+tnoremap <silent> <Esc> <C-\><C-n>:FloatermToggle<CR>
+" 从termial切换窗口, 有时候会和tmux按键冲突，可以替换成其他的
+tnoremap <silent> <C-b>h <C-\><C-n><C-w>h
+nnoremap <silent> <C-b>l <C-w>l
+```
+
+比较有用的技巧：按V选中文本后，然后输入<Leader>fs, 就会将选中内容输入到termial
+中
+
+如：
+
+```
+;fn ipython
+Vjj
+;fs
+```
+
 # TODO
 
 - [ ] vim terminal config
@@ -182,3 +224,4 @@ vi ** + tab
 # 推荐文章
 
 - 比较好的vim配置教程：https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/#how-do-i-change-the-font
+- vim入门到精通：https://github.com/wsdjeg/vim-galore-zh_cn
