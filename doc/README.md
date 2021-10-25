@@ -1,7 +1,7 @@
 # 说明：
 
 推荐教程：
-- 笨方法学vimrc脚本。
+- 笨方法学vimrc脚本: https://www.w3cschool.cn/vim/9sgmpozt.html
 - vim教程整理: https://github.com/vim-china/hello-vim
 
 vim脚本学习：
@@ -282,6 +282,48 @@ gT
 
 ```
 :1,5d
+```
+
+## vim<buffer>作用
+
+阅读：https://www.w3cschool.cn/vim/9sgmpozt.html
+
+```
+vi foo bar // 这样两个文件在同一缓存区
+:ls // 使用ls查看所有缓存区，左边有数字，然后旁边是缓存区名字，如果没有说明在
+同一缓存区
+
+vi foo
+:e bar // 这样打开的文件，两个文件不在同一缓存区, ls 可以发现两个名字不一样
+
+参考：https://vim.fandom.com/wiki/Buffers
+```
+
+```
+:nnoremap          <leader>d dd
+:nnoremap <buffer> <leader>x dd
+```
+
+> leader 键如果不设置buffer的话，对所有缓存区都有用，设置了buffer，则只对当前
+> 文件有效
+
+## vim自动命令与事件
+
+阅读：https://www.w3cschool.cn/vim/oc2t6ozt.html
+
+```
+# 多个事件
+
+你可以创建一个绑定_多个_事件的自动命令，这些事件使用逗号分隔开。执行下面的命令：
+:autocmd BufWritePre,BufRead *.html :normal gg=G
+
+# filetype事件
+最有用的事件是FileType事件。这个事件会在Vim设置一个缓冲区的filetype的时候触发。
+让我们针对不同文件类型设置一些有用的映射。运行命令：
+:autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+:autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+
+filetype会检测你打开的文件类型，然后执行后面的命令
 ```
 
 

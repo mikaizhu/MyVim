@@ -5,6 +5,26 @@ sudo apt install zsh
 sudo apt install nvim
 ```
 
+# 常用名词介绍
+
+参考：https://zhuanlan.zhihu.com/p/96801314
+
+缓存区：Buffer 是 vim 打开文件的时候创建的一个缓冲区，用来存储打开的文件 。 使用 vim 每打开一个文件就会创建一个 Buffer 。
+
+窗口：窗口是用来展示 Buffer 的信息的，vim 之所以有 Buffer 的概念，大概就是窗口显示文件内容的时候，可以快速显示出来。
+
+标签页：Tab 可以想象成浏览器中的标签页，不同之处是 vim 中的 一个Tab 可以有很多个窗口，每个窗口用来展示文件的内容信息。
+
+寄存器：顾名思义，一个存东西的机器, 当我们使用 y 复制内容的时候，vim 默认把内容寄存到一个无名寄存器，当使用黏贴功能 p 的时候，就会默认从无名寄存器中取出内容。
+
+```
+查看寄存器内容:reg
+
+ma 记录标签
+Ma 记录全局标签，可以多个文件跳转
+```
+
+
 ## nvim配置
 
 - 先安装nvim
@@ -158,6 +178,36 @@ Vjj
 ;fs
 ```
 
+# Ranger & telescope安装
+
+Ranger是用在命令行中的: https://github.com/ranger/ranger
+Telescope是在vim中运行的：https://github.com/nvim-telescope/telescope.nvim
+
+安装：
+
+```
+# 两种安装方式
+sudo apt install ranger
+pip install ranger-fm
+```
+
+如果是用的zsh
+
+```
+vi ~/.zshenv or vi ~/.bash_profile
+alias ranger=rg
+```
+
+ranger 会自动读取你的vim or neovim配置, 通过h j k l来移动文件目录, h l 切换上
+下级目录
+
+让ranger使用nvim打开文件
+```
+vi ~/.zshenv or vi ~/.bash_profile
+export VISUAL=nvim
+export PAGER=more
+```
+
 # TODO
 
 - [x] vim terminal config
@@ -226,3 +276,4 @@ vi ** + tab
 
 - 比较好的vim配置教程：https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/#how-do-i-change-the-font
 - vim入门到精通：https://github.com/wsdjeg/vim-galore-zh_cn
+- vim脚本编写：https://www.w3cschool.cn/vim/21zj8ozt.html
