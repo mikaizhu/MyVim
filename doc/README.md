@@ -312,6 +312,19 @@ vi foo
 阅读：https://www.w3cschool.cn/vim/oc2t6ozt.html
 
 ```
+" :autocmd BufNewFile * :write
+"         ^          ^ ^
+"         |          | |
+"         |          | 要执行的命令
+"         |          |
+"         |          用于事件过滤的“模式（pattern, 如果是*.txt则只对txt文件有效”
+"         |
+"         要监听的“事件”
+" bufwritePre会检测是否有新的缓存区出现，如果有则执行后面命令
+" autocmd BufWritePre *.html :normal gg=G
+```
+
+```
 # 多个事件
 
 你可以创建一个绑定_多个_事件的自动命令，这些事件使用逗号分隔开。执行下面的命令：
@@ -326,4 +339,57 @@ vi foo
 filetype会检测你打开的文件类型，然后执行后面的命令
 ```
 
+## 自动组命令
+
+即当某事件发生的时候，会自动执行的命令, 为了方便管理，将vim中的所有自动执行的
+命令，都放到自动组中 格式如下：
+
+```
+augroup mygroup
+  au!
+  autocmd BufWrite * :echom "Foo"
+  autocmd BufWrite * :echom "Bar"
+augroup END
+```
+
+如果不使用au！那么如果每次将缓冲区的文件写入文件中的时候，vim都会再次读取该文
+件。
+
+> 比如：我现在使用上面autocmd配置，然后编辑一个文件，每输入一些东西就保存，每次
+> 保存就是将缓存区的数据存入到文件中，每次存入就会调用autocmd bufwrite这个事件。
+> vim每次调用，不会自动覆盖掉上次的autocmd，因此每次保存，vim都会读取autocmd就会不断叠加，降低效率
+
+
+## vim onoremap
+
+vim 的思想：操作 + 移动，然后光标会到移动的位置，如下面命令
+```
+d /return<CR>
+```
+vim 会将当前位置。删到return位置，光标会停在return
+
+如果想自己定义移动方式，vim中有操作 c，y，d, 后面跟移动方式
+```
+:onoremap in( :<c-u>normal! f(vi(<cr>
+```
+输入din(, vim就会将当前行()中的内容删掉, in( 是自己定义的移动方式宏 后面是宏拓
+展，也就是自己定义的移动方式
+
+- F): 向后移动到最近的)字符。
+- vi(: 进入可视模式选择括号内的所有内容。
+- normal! 
+- c-u的作用
+
+```
+normal: 命令的后面会跟着一串字符，无论这些字符表示什么含义，:normal命令都会执行它们，就像是在常用模式下敲击这些字符一样。
+:normal gg
+normal命令简单地接受一串键值并当作是在normal模式下输入的。就是那么简单！
+:normal! gg 是防止递归映射
+
+Vim会将光标跳转到文件的顶部。
+
+execute命令后面会跟着一个Vim脚本字符串（以后会深究它的细节），然后把这个字符串当作一个命令执行。执行下面的命令：
+:execute "write"
+Vim会写文件，就像你已经输入了:write<cr>一样。
+```
 
