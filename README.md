@@ -5,6 +5,19 @@ sudo apt install zsh
 sudo apt install nvim
 ```
 
+# 推荐文章
+
+配置:
+- https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/#how-do-i-change-the-font
+- https://github.com/jdhao/nvim-config
+- https://github.com/theniceboy/nvim
+- https://github.com/SpaceVim/SpaceVim
+- vim: https://github.com/youngyangyang04/PowerVim
+
+教程:
+- vim脚本编写：https://www.w3cschool.cn/vim/21zj8ozt.html
+- vim入门到精通：https://github.com/wsdjeg/vim-galore-zh_cn
+
 # 常用名词介绍
 
 参考：https://zhuanlan.zhihu.com/p/96801314
@@ -208,15 +221,27 @@ export VISUAL=nvim
 export PAGER=more
 ```
 
+# CoC.nvim config
+
+nodejs: https://nodejs.org/en/download/
+coc.nvim: https://github.com/neoclide/coc.nvim
+
+1. 首先要安装nodejs
+
+> 可以使用源码安装，如果服务器没有网，可以本地下载，然后上传到服务器进行安装,
+> 注意检查版本`nodejs -v`，如果版本不对，下载最新版本，使用whereis nodejs, 然
+> 后sudo cp nodejs/bin/node /usr/bin
+
+
 # TODO
 
 - [x] vim terminal config
-- [ ] vim code language config eg: python cpp
-- [ ] vim code complete config
+- [x] vim teloscop
+- [x] vim fzf
+- [x] vim coc nvim 
+- [x] vim code language config eg: python cpp
+- [x] vim code complete config
 - [ ] vim markdown plugin
-- [ ] vim fzf
-- [ ] vim teloscop
-- [ ] vim coc nvim 
 
 # 常用网站
 
@@ -272,8 +297,3 @@ vi ** + tab
 
 # vimtex
 
-# 推荐文章
-
-- 比较好的vim配置教程：https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/#how-do-i-change-the-font
-- vim入门到精通：https://github.com/wsdjeg/vim-galore-zh_cn
-- vim脚本编写：https://www.w3cschool.cn/vim/21zj8ozt.html
