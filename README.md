@@ -12,11 +12,13 @@ sudo apt install nvim
 - https://github.com/jdhao/nvim-config
 - https://github.com/theniceboy/nvim
 - https://github.com/SpaceVim/SpaceVim
-- vim: https://github.com/youngyangyang04/PowerVim
+- https://github.com/youngyangyang04/PowerVim
 
 教程:
 - vim脚本编写：https://www.w3cschool.cn/vim/21zj8ozt.html
 - vim入门到精通：https://github.com/wsdjeg/vim-galore-zh_cn
+- learn vim in smart way: https://github.com/iggredible/Learn-Vim
+- vim中文手册：https://yianwillis.github.io/vimcdoc/doc/help.html
 
 # 常用名词介绍
 
