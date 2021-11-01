@@ -17,7 +17,7 @@ sudo apt install nvim
 教程:
 - vim脚本编写：https://www.w3cschool.cn/vim/21zj8ozt.html
 - vim入门到精通：https://github.com/wsdjeg/vim-galore-zh_cn
-- learn vim in smart way: https://github.com/iggredible/Learn-Vim
+- learn vim in smart way([中文翻译版](https://github.com/wsdjeg/Learn-Vim_zh_cn)): https://github.com/iggredible/Learn-Vim
 - vim中文手册：https://yianwillis.github.io/vimcdoc/doc/help.html
 
 # 常用名词介绍
@@ -274,11 +274,13 @@ vi ** + tab
 
 # vimspector安装和常用命令说明
 
-网址：https://github.com/puremourning/vimspector#quick-start
+网址：
+- https://github.com/puremourning/vimspector#quick-start
+- 中文参考配置: https://www.shuzhiduo.com/A/lk5a13l051/
+- 详细的配置: https://puremourning.github.io/vimspector/configuration.html#debug-adapter-configuration
+- 初略的配置: https://puremourning.github.io/vimspector-web/demo-setup.html#putting-it-together
 
 安装：Plugin 'puremourning/vimspector'
-
-插件位置：`/Users/.cache`
 
 > `/Users/zwl/.cache/nvim/plugged/vimspector` 
 
@@ -296,6 +298,56 @@ vi ** + tab
 首先在项目根目录下创建一个`.vimspector.json`, 当程序要开始debug的时候，会从当
 前目录不断向父目录寻找这个文件配置并使用
 
+如果要debug python文件，在python文件目录下配置.vimspector.json文件，并将内容填
+入
+
+```
+{
+  "adapters": {
+    "debugpy": {
+      "command": [
+        "python",
+        "-m",
+        "debugpy.adapter"
+      ],
+      "name": "debugpy",
+      "configuration": {
+        "python": "python"
+      }
+    }
+  },
+  "configurations": {
+    "run - debugpy": {
+      "adapter": "debugpy",
+      "configuration": {
+        "request": "launch",
+        "type": "python",
+        "cwd": "${workspaceRoot}",
+        "program": "${file}",
+        "stopOnEntry": true,
+        "console": "integratedTerminal"
+      },
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": ""
+        }
+      }
+    }
+  }
+}
+```
+
+启动debug：:call vimspector#Launch()
+向下debug：:call vimspector#Continue()
+设置断点： :call vimspector#ToggleBreakpoint()
+
+```
+vimspector#ToggleBreakpoint()
+vimspector#StepOver()
+vimspector#StepInto()
+vimspector#StepOut()
+```
 
 # vimtex
 
