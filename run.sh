@@ -9,7 +9,6 @@ grepository_ssh_url=git@github.com:mikaizhu/MyVim.git
 # 使用git ls-files查看当前目录下缓存区提交的文件
 # 使用git rm -rf filename 删除缓存区的文件或者目录
 git remote set-url origin $repository_ssh_url
-git pull
 git add .
 echo -n "input commit reason: "
 read reason

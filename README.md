@@ -1,8 +1,49 @@
 # MyVim配置说明
 
+## 安装nvim
 ```
-sudo apt install zsh
+# 安装最新的nvim
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
 sudo apt install nvim
+```
+
+## 安装nerd fonts
+
+下载一种终端显示字体，这里可以参考终端介绍：https://segmentfault.com/a/1190000016129862
+
+> 终端的作用是接收键盘的输入，将输入丢给shell，shell与计算机内核进行通信，并将
+> 结果返回给终端，终端再解析这些结果，然后输出到显示器上。所以字体是下载到
+> terminal中，shell通过软件，将结果输出给terminal然后显示这些字体.
+
+1. nerd fonts 下载地址：https://www.nerdfonts.com/font-downloads
+
+2. 下载好后在terminal中设置好下载的字体.
+
+## 安装zsh
+
+1. 安装zsh
+
+```
+brew install zsh
+```
+
+2. 安装ohmyzsh
+
+```
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
+sh install.sh
+```
+
+## 配置nvim
+
+
+
+1. 手动安装模块
+
+```
+# 将下载好的GitHub模块放到路径: /home/zwl/.local/share/nvim/site/pack/packer/start
 ```
 
 # 推荐文章

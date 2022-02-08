@@ -1,5 +1,6 @@
 #!/usr/bin bash
 # 安装nvim，如果是mac，直接用brew install nvim
+sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 
