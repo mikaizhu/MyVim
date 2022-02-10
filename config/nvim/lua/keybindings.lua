@@ -32,6 +32,9 @@ map("v", "K", "5k", opt)
 map("v", "H", "5h", opt)
 map("v", "L", "5l", opt)
 
+-- oscyank
+map("v", "y", ":OSCYank<CR>", opt)
+
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)

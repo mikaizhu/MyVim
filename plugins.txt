@@ -1,0 +1,29 @@
+1. Plugin Manager: https://github.com/wbthomason/packer.nvim
+2. Colorscheme: https://github.com/sainnhe/sonokai
+3. Nvim Tree: https://github.com/kyazdani42/nvim-tree.lua
+4. Bufferline: https://github.com/akinsho/bufferline.nvim
+5. Web-devicons: https://github.com/kyazdani42/nvim-web-devicons
+6. nvim-treesitter: https://github.com/nvim-treesitter/nvim-treesitter
+
+# lsp
+7. nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
+8. nvim-lsp-installer: https://github.com/williamboman/nvim-lsp-installer
+
+# cmp
+9. cmp-nvim-lsp: https://github.com/hrsh7th/cmp-nvim-lsp
+10. cmp-buffer: https://github.com/hrsh7th/cmp-buffer
+11. cmp-path: https://github.com/hrsh7th/cmp-path
+12. cmp-cmdline: https://github.com/hrsh7th/cmp-cmdline
+13. nvim-cmp: https://github.com/hrsh7th/nvim-cmp
+
+# snip
+14. cmp-vsnip: https://github.com/hrsh7th/cmp-vsnip
+15. vim-vsnip: https://github.com/hrsh7th/vim-vsnip
+16. friendly-snippets: https://github.com/rafamadriz/friendly-snippets
+17. lspkind-nvim: https://github.com/onsails/lspkind-nvim
+
+# terminal
+18. toggleterm.nvim: https://github.com/akinsho/toggleterm.nvim
+
+# yank
+19. vim-oscyank: https://github.com/ojroques/vim-oscyank

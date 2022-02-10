@@ -3,8 +3,8 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'sainnhe/sonokai'
   -- 使用本地的，直接将插件下载到该目录下即可
-  use '/home/zwl/.local/share/nvim/site/pack/packer/start/sonokai'
-  use '/home/zwl/.local/share/nvim/site/pack/packer/start/nvim-tree.lua'
+  --use '/home/zwl/.local/share/nvim/site/pack/packer/start/sonokai'
+  use 'kyazdani42/nvim-tree.lua'
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -26,4 +26,7 @@ return require('packer').startup(function()
 
   -- terminal
   use {"akinsho/toggleterm.nvim"}
+
+  -- yank
+  use {"ojroques/vim-oscyank"}
 end)

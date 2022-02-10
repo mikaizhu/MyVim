@@ -1,11 +1,37 @@
 # MyVim配置说明
 
+**requirements**:
+
+- nvim >= 0.6 
+- nerd founts
+- zsh
+- ohmyzsh
+
+**直接使用本配置**:
+
+```
+git clone https://github.com/mikaizhu/MyVim.git && cd Myvim && sh install.sh
+```
+
+**basic learning**:
+- learn lua from [here](https://nvchad.github.io/getting-started/learn-lua)
+- learn vimscript from [here](https://nvchad.github.io/getting-started/post-install)
+
 ## 安装nvim
+
+1. linux 安装最新版本
 ```
 # 安装最新的nvim
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt install nvim
+```
+
+2. mac安装最新版本
+
+```
+brew update
+brew install neovim # or brew upgrade neovim
 ```
 
 ## 安装nerd fonts
@@ -38,13 +64,13 @@ sh install.sh
 
 ## 配置nvim
 
-
-
 1. 手动安装模块
 
 ```
 # 将下载好的GitHub模块放到路径: /home/zwl/.local/share/nvim/site/pack/packer/start
 ```
+
+> 说明: lazy loading 指的是，只有某些事件触发，才会调用插件，这类插件放置在opt目录下，start目录下存放着当nvim启动就立刻加载的插件
 
 # 推荐文章
 
@@ -80,15 +106,9 @@ ma 记录标签
 Ma 记录全局标签，可以多个文件跳转
 ```
 
-
-## nvim配置
-
-- 先安装nvim
-- 先下载nvim中所有的文件
-
 ## jupyter & vim 配置
 
-- 直接运行main.sh文件
+- 直接运行install.sh文件
 
 ## nvim 0 to 1
 
@@ -389,6 +409,3 @@ vimspector#StepOver()
 vimspector#StepInto()
 vimspector#StepOut()
 ```
-
-# vimtex
-
