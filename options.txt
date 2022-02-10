@@ -1,0 +1,39 @@
+-- options
+
+-- noraml key mappting
+
+
+-- nvim tree options
+
+ref: https://github.com/kyazdani42/nvim-tree.lua
+
+r: rename file
+a: add a new file
+gy: copy file absolute path to system clipboard, and use 'control-v'(or 'p') to phase
+d: delete file
+x: to add/remove file/directory to cut clipboard, this file will move current path to another path
+p: cooperate with 'x', phase file to current path
+
+--TODO: add fast move to nvim tree
+
+-- nvim bufferline
+
+S-h: shift + h to shift to left buffer
+S-l: shift + l to shift to right buffer
+
+--TODO: add close current buffer rather than exit neovim
+
+-- nvim treesitter(optional)
+
+nvim treesitter is a optional plugin, we need to install different language parser, and each parser provides 4 modules:
+
+1. code formatting
+2. hilighting
+3. code foldding
+4. code extension
+
+zz: foldding the code
+zo: unfoldding the code
+V+=: 'V' to chose code line and then use '=' to format it
+
+-- lsp

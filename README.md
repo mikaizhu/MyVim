@@ -40,7 +40,7 @@ brew install neovim # or brew upgrade neovim
 
 > 终端的作用是接收键盘的输入，将输入丢给shell，shell与计算机内核进行通信，并将
 > 结果返回给终端，终端再解析这些结果，然后输出到显示器上。所以字体是下载到
-> terminal中，shell通过软件，将结果输出给terminal然后显示这些字体.
+> terminal中，shel通过软件，将结果输出给terminal然后显示这些字体.
 
 1. nerd fonts 下载地址：https://www.nerdfonts.com/font-downloads
 

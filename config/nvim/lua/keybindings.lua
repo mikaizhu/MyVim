@@ -11,21 +11,12 @@ local opt = {
 }
 
 -- map函数的作用域
--- nvim tree
-map("n", "tt", ":NvimTreeToggle<CR>", opt)
-
-map("n", "<C-j>", "4j", opt)
-map("n", "<C-k>", "4k", opt)
-map("i", "<C-h>", "<ESC>I", opt)
-map("i", "<C-l>", "<ESC>A", opt)
-
 map("i", "jj", "<ESC>:w<CR>", opt)
 map("n", "q", ":wq<CR>", opt)
+map("n", "<leader>q", ":bd<CR>", opt)
 map("n", "U", "<C-r>", opt)
 map("n", "J", "5j", opt)
 map("n", "K", "5k", opt)
-map("n", "H", "5h", opt)
-map("n", "L", "5l", opt)
 
 map("v", "J", "5j", opt)
 map("v", "K", "5k", opt)
@@ -63,31 +54,30 @@ map("n", "sq", ":qa", opt) -- close all
 
 -- 比例控制
 -- . 表示> , 表示<
-map("n", "s.", ":vertical resize +20<CR>", opt)
-map("n", "s,", ":vertical resize -20<CR>", opt)
-map("n", "s=", "<C-w>=", opt)
-map("n", "sj", ":resize +10<CR>", opt)
-map("n", "sk", ":resize -10<CR>", opt)
+map("n", "<C-Right>", ":vertical resize +20<CR>", opt)
+map("n", "<C-Left>", ":vertical resize -20<CR>", opt)
+map("n", "<C-Down>", ":resize +10<CR>", opt)
+map("n", "<C-Up>", ":resize -10<CR>", opt)
 
 -- alt + hjkl  窗口之间跳转
 -- z键比较好按，且映射比较少 h j k l 
-map("n", "zh", "<C-w>h", opt)
-map("n", "zj", "<C-w>j", opt)
-map("n", "zk", "<C-w>k", opt)
-map("n", "zl", "<C-w>l", opt)
+map("n", "<C-h>", "<C-w>h", opt)
+map("n", "<C-j>", "<C-w>j", opt)
+map("n", "<C-k>", "<C-w>k", opt)
+map("n", "<C-l>", "<C-w>l", opt)
 
 --------------------------------------------------------------------
 -- 插件快捷键
--- nvimTree
-map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 
+map("n", "tt", ":NvimTreeToggle<CR>", opt)
 -- bufferline 左右Tab切换
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<C-w>", ":bd<CR>", opt)
+map("n", "<S-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<S-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=G", opt)
+map("n", "zz", "zc", opt) -- code folding: use 'zo' unfolding code
+-- 在V模式下使用=号可以formatting code
 
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
@@ -149,9 +139,9 @@ pluginKeys.cmp = function(cmp)
     -- 下一个
     ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
-    ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消
-    ['<A-,>'] = cmp.mapping({
+    ['<C-,>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),

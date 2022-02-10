@@ -1,7 +1,6 @@
 require'nvim-tree'.setup {
     -- 关闭文件时自动关闭
-    buffer_auto_close = true,
-    auto_close = false,
+    auto_close = true,
     hijack_netrw = false,
     -- 不显示 git 状态图标
     git = {
@@ -12,4 +11,5 @@ require'nvim-tree'.setup {
       auto_open = true,
     },
     open_on_tab = false,
+    quit_on_open = 1,
 }

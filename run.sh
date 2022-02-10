@@ -1,4 +1,5 @@
 #!/bin/bash
+o
 # . ./src/toc.sh
 # python3 src/to_top.py
 # 上传文件到GitHub
