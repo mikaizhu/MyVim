@@ -7,6 +7,7 @@
 # install nvim config
 mkdir -r ~/.config/nvim
 cp -r ./config/nvim/* ~/.config/nvim
+unzip packer.nvim.zip && rm packer.nvim.zip
 cp -r ./config/packer.nvim/ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 nvim +PackerSync
 
