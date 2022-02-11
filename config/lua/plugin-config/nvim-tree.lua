@@ -1,25 +1,3 @@
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-
-
-require'nvim-tree'.setup {
-    -- 关闭文件时自动关闭
-    auto_close = true,
-    hijack_netrw = false,
-    -- 不显示 git 状态图标
-    git = {
-        enable = false
-    },
-    update_to_buf_dir = {
-      enable = true,
-      auto_open = true,
-    },
-    open_on_tab = false,
-    quit_on_open = 1,
-    mapping = { key = "J", action_cb = function() vim.cmd":normal 5j" end }
-}
-
--- init.lua
-
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 require'nvim-tree'.setup {
@@ -70,23 +48,8 @@ require'nvim-tree'.setup {
     side = 'left',
     auto_resize = false,
     mappings = {
-      custom_only = false,
-      list = { key = "J", action_cb = function() vim.cmd":normal 5j" end }
-    },
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes"
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true
-  },
-  actions = {
-    change_dir = {
-      global = false,
-    },
-    open_file = {
-      quit_on_open = false,
-    }
-  }
+      list = {
+      { key = "J", action_cb = function() vim.cmd":normal 5j" end },
+      { key = "K", action_cb = function() vim.cmd":normal 5k" end },
+    },},}
 }

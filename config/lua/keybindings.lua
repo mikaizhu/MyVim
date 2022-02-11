@@ -1,19 +1,16 @@
 -- leader key 为空格
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
-
-
 -- 本地变量
 local map = vim.api.nvim_set_keymap
 local opt = {
   noremap = true,
   silent = true
 }
-
 -- map函数的作用域
 map("i", "jj", "<ESC>:w<CR>", opt)
-map("n", "q", ":wq<CR>", opt)
-map("n", "<leader>q", ":bd<CR>", opt)
+map("n", "q", ":w | qa<CR>", opt)
+map("n", "<leader>q", ":Bdelete!<CR>", opt) -- close current buffer
 map("n", "U", "<C-r>", opt)
 map("n", "J", "5j", opt)
 map("n", "K", "5k", opt)
@@ -40,7 +37,6 @@ map("n", "/", "/\\v", { noremap = true , silent = false})
 map("v", "/", "/\\v", { noremap = true , silent = false})
 
 ------------------------------------------------------------------
--- windows 分屏快捷键
 -- 取消s按键，s会替换当前字符
 map("n", "s", "", opt)
 map("n", "sv", ":vsp<CR>", opt)
@@ -54,10 +50,10 @@ map("n", "sq", ":qa", opt) -- close all
 
 -- 比例控制
 -- . 表示> , 表示<
-map("n", "<C-Right>", ":vertical resize +20<CR>", opt)
-map("n", "<C-Left>", ":vertical resize -20<CR>", opt)
-map("n", "<C-Down>", ":resize +10<CR>", opt)
-map("n", "<C-Up>", ":resize -10<CR>", opt)
+map("n", "<s-Right>", ":vertical resize +10<CR>", opt)
+map("n", "<s-Left>", ":vertical resize -10<CR>", opt)
+map("n", "<s-Down>", ":resize +5<CR>", opt)
+map("n", "<s-Up>", ":resize -5<CR>", opt)
 
 -- alt + hjkl  窗口之间跳转
 -- z键比较好按，且映射比较少 h j k l 
@@ -76,8 +72,8 @@ map("n", "<S-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=G", opt)
-map("n", "zz", "zc", opt) -- code folding: use 'zo' unfolding code
--- 在V模式下使用=号可以formatting code
+map("n", "zz", "zc", opt) -- 
+-- 
 
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
@@ -139,9 +135,9 @@ pluginKeys.cmp = function(cmp)
     -- 下一个
     ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
-    ['<C-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    -- 取消
-    ['<C-,>'] = cmp.mapping({
+    ['<C-o>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    -- 取消提示
+    ['<C-[>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),

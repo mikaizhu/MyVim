@@ -3,7 +3,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'sainnhe/sonokai'
   -- 使用本地的，直接将插件下载到该目录下即可
-  --use '/home/zwl/.local/share/nvim/site/pack/packer/start/sonokai'
+  use 'sainnhe/sonokai'
   use 'kyazdani42/nvim-tree.lua'
   use {'akinsho/bufferline.nvim', requires = {'kyazdani42/nvim-web-devicons', "moll/vim-bbye"}}
   -- treesitter
@@ -28,5 +28,5 @@ return require('packer').startup(function()
   use {"akinsho/toggleterm.nvim"}
 
   -- yank
-  use {"ojroques/vim-oscyank"}
+  use "ojroques/vim-oscyank"
 end)

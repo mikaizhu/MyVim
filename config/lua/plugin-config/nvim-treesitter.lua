@@ -18,7 +18,6 @@ require'nvim-treesitter.configs'.setup {
     }
   },
   -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
-  -- indent = true 表示支持的语言，回车后会自动根据上一行添加indent
   indent = {
     enable = true
   }
