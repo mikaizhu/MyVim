@@ -27,3 +27,6 @@
 
 # yank
 19. vim-oscyank: https://github.com/ojroques/vim-oscyank
+
+# bufferline
+20. nvim-bufferline require: https://github.com/moll/vim-bbye
