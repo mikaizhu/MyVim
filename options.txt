@@ -33,14 +33,12 @@
 -- lsp
 -- complete options
 
-auto complete defaulte close:
+auto complete(default close):
+  <Tab>: open auto coplete
   C-k,j: select prev/next item when autocompletion
-  C-o: auto complete arise
   C-[: auto complete close
   CR: select item
   C-u,d: fast select
---TODO: use tab to triggle auto cmp
---TODO: let cmp config better, it can recognize file path
 
 -- defnition options
 

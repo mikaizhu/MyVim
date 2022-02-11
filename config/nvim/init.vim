@@ -16,7 +16,6 @@ lua require('plugin-config/indent-blankline')
 lua require('plugin-config/hlslens')
 lua require('plugin-config/toggleterm')
 
-
 lua require('lsp/setup')
 lua require('lsp/nvim-cmp')
 
