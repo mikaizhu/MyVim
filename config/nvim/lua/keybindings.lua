@@ -14,6 +14,7 @@ map("n", "<leader>q", ":Bdelete!<CR>", opt) -- close current buffer
 map("n", "U", "<C-r>", opt)
 map("n", "J", "5j", opt)
 map("n", "K", "5k", opt)
+map("n", "<C-[>", ":noh<CR>", opt)
 
 map("v", "J", "5j", opt)
 map("v", "K", "5k", opt)
@@ -85,16 +86,16 @@ local pluginKeys = {}
 
 -- 代码注释插件
 -- see ./lua/plugin-config/comment.lua
-pluginKeys.comment = {
-  toggler = {
-    line = 'gcc',
-    block = 'gbc',
-  },
-  opleader = {
-    line = 'gc',
-    bock = 'gb'
-  }
-}
+-- pluginKeys.comment = {
+--   toggler = {
+--     line = 'gcc',
+--     block = 'gbc',
+--   },
+--   opleader = {
+--     line = '<C-/><Esc>',
+--     bock = 'gb'
+--   }
+-- }
 
 -- ctrl + /
 map("n", "<C-_>", "gcc", {noremap = false})
@@ -135,7 +136,7 @@ pluginKeys.cmp = function(cmp)
     -- 下一个
     ['<C-j>'] = cmp.mapping.select_next_item(),
     -- 出现补全
-    ['<C-o>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<Tab>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     -- 取消提示
     ['<C-[>'] = cmp.mapping({
       i = cmp.mapping.abort(),

@@ -12,14 +12,10 @@
   x: to add/remove file/directory to cut clipboard, this file will move current path to another path
   p: cooperate with 'x', phase file to current path
 
---TODO: add fast move to nvim tree
-
 -- nvim bufferline
 
   S-h: shift + h to shift to left buffer
   S-l: shift + l to shift to right buffer
-
---TODO: add close current buffer rather than exit neovim
 
 -- nvim treesitter(optional)
 
@@ -43,10 +39,25 @@ auto complete defaulte close:
   C-[: auto complete close
   CR: select item
   C-u,d: fast select
+--TODO: use tab to triggle auto cmp
+--TODO: let cmp config better, it can recognize file path
 
 -- defnition options
 
-gd: go to definition
-gh: hover
-go: open float
+  gd: go to definition
+  gh: hover
+  go: open float
+
+-- comments
+
+  gcc: line comment
+  gc: visual block comment
+
+-- termial
+
+  C\: open or close terminal
+
+-- hlsearch
+
+  C[ | Esc: hol search
 

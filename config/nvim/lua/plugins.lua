@@ -29,4 +29,27 @@ return require('packer').startup(function()
 
   -- yank
   use "ojroques/vim-oscyank"
+
+  -- auto pairs
+  use "jiangmiao/auto-pairs"
+
+  -- comments
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  -- status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use "lukas-reineke/indent-blankline.nvim"
+
+  -- search highlight
+  use "kevinhwang91/nvim-hlslens"
+
 end)

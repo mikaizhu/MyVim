@@ -31,7 +31,7 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示

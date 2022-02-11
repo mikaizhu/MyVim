@@ -1,32 +1,57 @@
-1. Plugin Manager: https://github.com/wbthomason/packer.nvim
-2. Colorscheme: https://github.com/sainnhe/sonokai
-3. Nvim Tree: https://github.com/kyazdani42/nvim-tree.lua
-4. Bufferline: https://github.com/akinsho/bufferline.nvim
-5. Web-devicons: https://github.com/kyazdani42/nvim-web-devicons
-6. nvim-treesitter: https://github.com/nvim-treesitter/nvim-treesitter
+# plug manager
+plugin Manager: https://github.com/wbthomason/packer.nvim
 
-# lsp
-7. nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
-8. nvim-lsp-installer: https://github.com/williamboman/nvim-lsp-installer
+# color
+colorscheme: https://github.com/sainnhe/sonokai
 
-# cmp
-9. cmp-nvim-lsp: https://github.com/hrsh7th/cmp-nvim-lsp
-10. cmp-buffer: https://github.com/hrsh7th/cmp-buffer
-11. cmp-path: https://github.com/hrsh7th/cmp-path
-12. cmp-cmdline: https://github.com/hrsh7th/cmp-cmdline
-13. nvim-cmp: https://github.com/hrsh7th/nvim-cmp
-
-# snip
-14. cmp-vsnip: https://github.com/hrsh7th/cmp-vsnip
-15. vim-vsnip: https://github.com/hrsh7th/vim-vsnip
-16. friendly-snippets: https://github.com/rafamadriz/friendly-snippets
-17. lspkind-nvim: https://github.com/onsails/lspkind-nvim
-
-# terminal
-18. toggleterm.nvim: https://github.com/akinsho/toggleterm.nvim
-
-# yank
-19. vim-oscyank: https://github.com/ojroques/vim-oscyank
+# file tree
+nvim tree: https://github.com/kyazdani42/nvim-tree.lua
 
 # bufferline
-20. nvim-bufferline require: https://github.com/moll/vim-bbye
+bufferline: https://github.com/akinsho/bufferline.nvim
+nvim-bufferline require: https://github.com/moll/vim-bbye
+
+# treesitter
+web-devicons: https://github.com/kyazdani42/nvim-web-devicons
+nvim-treesitter: https://github.com/nvim-treesitter/nvim-treesitter
+
+# lsp
+nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
+nvim-lsp-installer: https://github.com/williamboman/nvim-lsp-installer
+
+# cmp
+cmp-nvim-lsp: https://github.com/hrsh7th/cmp-nvim-lsp
+cmp-buffer: https://github.com/hrsh7th/cmp-buffer
+cmp-path: https://github.com/hrsh7th/cmp-path
+cmp-cmdline: https://github.com/hrsh7th/cmp-cmdline
+nvim-cmp: https://github.com/hrsh7th/nvim-cmp
+
+# snip
+cmp-vsnip: https://github.com/hrsh7th/cmp-vsnip
+vim-vsnip: https://github.com/hrsh7th/vim-vsnip
+friendly-snippets: https://github.com/rafamadriz/friendly-snippets
+lspkind-nvim: https://github.com/onsails/lspkind-nvim
+
+# terminal
+toggleterm.nvim: https://github.com/akinsho/toggleterm.nvim
+
+# yank
+vim-oscyank: https://github.com/ojroques/vim-oscyank
+
+# auto pairs
+https://github.com/jiangmiao/auto-pairs
+
+# nvim comments
+https://github.com/numToStr/Comment.nvim
+https://github.com/JoosepAlviste/nvim-ts-context-commentstring
+
+# statue line
+https://github.com/nvim-lualine/lualine.nvim
+
+# indent blank: use in python can see if code is align
+https://github.com/lukas-reineke/indent-blankline.nvim
+
+# highlight search
+https://github.com/kevinhwang91/nvim-hlslens
+
+

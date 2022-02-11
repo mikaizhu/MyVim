@@ -49,7 +49,7 @@ require'nvim-tree'.setup {
     auto_resize = false,
     mappings = {
       list = {
-      { key = "J", action_cb = function() vim.cmd":normal 5j" end },
-      { key = "K", action_cb = function() vim.cmd":normal 5k" end },
-    },},}
+      { key = "J", action = "move_down_fast", action_cb = function() vim.cmd":normal 5j" end },
+      { key = "K", action = "move_up_fast", action_cb = function() vim.cmd":normal 5k" end }
+      },},}
 }
