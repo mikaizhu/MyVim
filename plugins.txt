@@ -62,3 +62,7 @@ https://github.com/nvim-telescope/telescope-media-files.nvim
 
 # marks
 https://github.com/chentau/marks.nvim
+
+# cursor line: highlight
+https://github.com/yamatsum/nvim-cursorline
+https://github.com/RRethy/vim-illuminate

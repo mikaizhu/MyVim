@@ -10,13 +10,14 @@
 **use this config**:
 
 ```
-git clone https://github.com/mikaizhu/MyVim.git && cd Myvim && sh install.sh
+git clone https://github.com/mikaizhu/MyVim.git && cd MyVim && sh install.sh
 ```
 **recomments**:
 
 - [AstroVim](https://github.com/kabinspace/AstroVim)
 - [learn-neovim-lua[中文]](https://github.com/nshen/learn-neovim-lua) 
 - [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch) 
+- [awesome neovim[find plugin]](https://github.com/rockerBOO/awesome-neovim) 
 
 **basic learning**:
 - learn lua from [here](https://nvchad.github.io/getting-started/learn-lua)
