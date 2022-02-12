@@ -5,6 +5,7 @@ lua require('basic')
 lua require('keybindings')
 
 " 插件管理
+" plugin
 lua require('plugins')
 lua require('plugin-config/bufferline')
 lua require('plugin-config/nvim-tree')
@@ -15,7 +16,11 @@ lua require('plugin-config/lualine')
 lua require('plugin-config/indent-blankline')
 lua require('plugin-config/hlslens')
 lua require('plugin-config/toggleterm')
+lua require('plugin-config/orgmode')
+lua require('plugin-config/telescope')
+lua require('plugin-config/marks')
 
+" lsp
 lua require('lsp/setup')
 lua require('lsp/nvim-cmp')
 

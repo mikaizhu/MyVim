@@ -72,6 +72,24 @@ sh install.sh
 
 > 说明: lazy loading 指的是，只有某些事件触发，才会调用插件，这类插件放置在opt目录下，start目录下存放着当nvim启动就立刻加载的插件
 
+### telescope
+
+1. 需要
+
+mac:
+```
+brew install ripgrep
+```
+
+ubuntu:
+```
+apt install ripgrep
+```
+
+TODO:
+1. 说明下各个模块需要注意的地方
+2. 说明下整个文件的结构
+
 # 推荐文章
 
 配置:

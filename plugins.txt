@@ -54,4 +54,11 @@ https://github.com/lukas-reineke/indent-blankline.nvim
 # highlight search
 https://github.com/kevinhwang91/nvim-hlslens
 
+# telescope
+https://github.com/nvim-telescope/telescope.nvim
+https://github.com/nvim-lua/popup.nvim
+https://github.com/nvim-lua/plenary.nvim
+https://github.com/nvim-telescope/telescope-media-files.nvim
 
+# marks
+https://github.com/chentau/marks.nvim

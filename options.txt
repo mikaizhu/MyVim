@@ -59,3 +59,7 @@ auto complete(default close):
 
   C[ | Esc: hol search
 
+-- telescope
+
+  <Leader>f: use file name to find file
+  <Leader>g: use key words to find file

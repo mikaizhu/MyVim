@@ -32,11 +32,12 @@ cmp.setup {
   },
   -- 来源
   sources = {
+  {name = "path"},
   {name = "nvim_lsp"},
   {name = "nvim_lua"},
   {name = "luasnip"},
   {name = "buffer"},
-  {name = "path"},
+  {name = "orgmod"}
   },
   -- 快捷键
   mapping = {

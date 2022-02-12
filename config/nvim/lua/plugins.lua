@@ -52,4 +52,22 @@ return require('packer').startup(function()
   -- search highlight
   use "kevinhwang91/nvim-hlslens"
 
+  -- agenda & todo
+  use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+  end
+  }
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
+
+  -- marks
+  --
+  use 'chentau/marks.nvim'
+
 end)

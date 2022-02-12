@@ -129,6 +129,12 @@ local pluginKeys = {}
 map("n", "<C-_>", "gcc", {noremap = false})
 map("v", "<C-_>", "gcc", {noremap = false})
 
+-- telescope
+-- 如果想显示文件内容，用第一个
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+map("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opt)
+map("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opt)
+
 -- lsp 回调函数快捷键设置
 pluginKeys.maplsp = function(mapbuf)
   -- rename
