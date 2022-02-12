@@ -126,6 +126,11 @@ sh install.sh
 2. 如果想使用本地插件，比如网络不好的时候，可以使用 use `~/.local/share/nvim/site/pack/packer/start/{your_package}`
 ```
 
+安装插件的流程为：
+1. 在`plugins.lua`：添加插件
+2. 在`plugin-config` 目录下，添加对应插件的配置文件
+3. 退出nvim, 然后执行`:PackerSync` 
+
 > 说明: lazy loading 指的是，只有某些事件触发，才会调用插件，这类插件放置在opt目录下，start目录下存放着当nvim启动就立刻加载的插件
 
 ### telescope
@@ -141,6 +146,19 @@ ubuntu:
 ```
 apt install ripgrep
 ```
+
+### lsp
+
+nvim为lsp的客户端，默认没安装lsp服务端，我们需要安装服务端, 参考[learn-neovim-lua [中文]](https://github.com/nshen/learn-neovim-lua)
+
+安装好lsp服务端后，就可以使用以下功能：
+- 补全
+- 去定义
+
+在`lsp/` 目录下，配置好相应的`.lua` (可以从官网找怎么配置), 然后在setup中添加该语言，进行安装
+
+treesitter: 配置在`plugin-config/nvim-treesitter`, 要想高亮不同语言，需要在里面配置
+- 为代码高亮
 
 # 推荐文章
 
