@@ -2,8 +2,32 @@
 
 -- noraml key mappting
 
+jj: back to normal mode
+q: save file and close nvim
+<leader>q: save current buffer and close
+J,K: fast moving
+C-[: in normal mode, set noh
+C-u/d: fast moving
+V+</>: indent code
+
+-- window split
+
+sv: v split window
+sh: h split window
+sc: close current window
+so: close others window
+sq: close all window
+shift-right/left/down/up: window resize
+C-h/j/k/l: window jump
+
+-- buffer
+H: change to left buffer
+L: change to right buffer
+
 
 -- nvim tree options
+
+  tt: open | close nvim tree
 
   r: rename file
   a: add a new file

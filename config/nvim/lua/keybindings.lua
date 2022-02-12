@@ -14,7 +14,7 @@ map("n", "<leader>q", ":w | :Bdelete!<CR>", opt) -- close current buffer
 map("n", "U", "<C-r>", opt)
 map("n", "J", "5j", opt)
 map("n", "K", "5k", opt)
-map("n", "<C-[>", ":noh<CR>", opt)
+map("n", "<C-[>", "<Esc> | :noh<CR>", opt)
 
 
 map("v", "J", "5j", opt)
@@ -45,10 +45,10 @@ map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
 
 -- 关闭当前
-map("n", "sc", "<C-w>c", opt)
+map("n", "sc", "<C-w>c<CR>", opt)
 -- 关闭其他
-map("n", "so", "<C-w>o", opt) -- close others
-map("n", "sq", ":qa", opt) -- close all
+map("n", "so", "<C-w>o<CR>", opt) -- close others
+map("n", "sq", ":qa<CR>", opt) -- close all
 
 -- 比例控制
 -- . 表示> , 表示<
@@ -120,19 +120,6 @@ map('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.H
 
 -- map函数的作用域
 local pluginKeys = {}
-
--- 代码注释插件
--- see ./lua/plugin-config/comment.lua
--- pluginKeys.comment = {
---   toggler = {
---     line = 'gcc',
---     block = 'gbc',
---   },
---   opleader = {
---     line = '<C-/><Esc>',
---     bock = 'gb'
---   }
--- }
 
 -- ctrl + /
 map("n", "<C-_>", "gcc", {noremap = false})
