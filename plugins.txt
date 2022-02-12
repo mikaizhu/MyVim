@@ -54,15 +54,24 @@ https://github.com/lukas-reineke/indent-blankline.nvim
 # highlight search
 https://github.com/kevinhwang91/nvim-hlslens
 
-# telescope
+# telescope: search file and grep file
 https://github.com/nvim-telescope/telescope.nvim
 https://github.com/nvim-lua/popup.nvim
 https://github.com/nvim-lua/plenary.nvim
 https://github.com/nvim-telescope/telescope-media-files.nvim
 
-# marks
+# marks: we can see mark in left
 https://github.com/chentau/marks.nvim
 
 # cursor line: highlight
 https://github.com/yamatsum/nvim-cursorline
 https://github.com/RRethy/vim-illuminate
+
+# hop motions: use clever f
+https://github.com/phaazon/hop.nvim
+
+# better escape
+https://github.com/max397574/better-escape.nvim
+
+# smoth scroll
+https://github.com/karb94/neoscroll.nvim

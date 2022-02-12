@@ -70,4 +70,27 @@ return require('packer').startup(function()
   --
   use 'chentau/marks.nvim'
 
+  -- motions
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+  -- hilight cursor
+  use "RRethy/vim-illuminate"
+
+  -- easy escape
+  -- lua with packer.nvim
+  use {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup()
+    end,
+  }
+
+  use 'karb94/neoscroll.nvim'
+
 end)

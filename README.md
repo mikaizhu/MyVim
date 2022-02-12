@@ -1,5 +1,4 @@
 # MyVim配置说明
-
 **requirements**:
 
 - nvim >= 0.6 
@@ -14,10 +13,11 @@ git clone https://github.com/mikaizhu/MyVim.git && cd MyVim && sh install.sh
 ```
 **recomments**:
 
-- [AstroVim](https://github.com/kabinspace/AstroVim)
-- [learn-neovim-lua[中文]](https://github.com/nshen/learn-neovim-lua) 
-- [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch) 
-- [awesome neovim[find plugin]](https://github.com/rockerBOO/awesome-neovim) 
+- [AstroVim [config]](https://github.com/kabinspace/AstroVim)
+- [NvChad [config]](https://github.com/NvChad/NvChad)
+- [learn-neovim-lua [中文]](https://github.com/nshen/learn-neovim-lua) 
+- [Neovim-from-scratch [english]](https://github.com/LunarVim/Neovim-from-scratch) 
+- [awesome neovim [find plugin]](https://github.com/rockerBOO/awesome-neovim) 
 
 **basic learning**:
 - learn lua from [here](https://nvchad.github.io/getting-started/learn-lua)
@@ -52,6 +52,23 @@ brew install neovim # or brew upgrade neovim
 
 2. 下载好后在terminal中设置好下载的字体.
 
+推荐字体Hack Nerd font：https://github.com/ryanoasis/vim-devicons
+
+下载方式：
+
+```
+cd ~/.config/nvim && mkdir patched-fonts
+cd patched-fonts
+git init
+git remote add origin https://github.com/ryanoasis/nerd-fonts
+git config core.sparsecheckout true
+echo "Hack" >> .git/info/sparse-checkout
+git pull --depth 1 origin master 
+cd ..
+chmod +x install.sh
+./install.sh Hack
+```
+
 ## 安装zsh
 
 1. 安装zsh
@@ -70,10 +87,43 @@ sh install.sh
 
 ## 配置nvim
 
-1. 手动安装模块
+**文件结构说明**:
 
 ```
-# 将下载好的GitHub模块放到路径: /home/zwl/.local/share/nvim/site/pack/packer/start
+├── init.vim
+├── lua
+│   ├── basic.lua
+│   ├── keybindings.lua
+│   ├── lsp
+│   ├── plugin-config
+│   └── plugins.lua
+└── plugin
+    └── packer_compiled.lua
+```
+
+`init.vim`: nvim程序启动的入口，每次启动都会执行里面的代码，也可以使用`init.lua`作为入口文件, 所以要想启动什么配置，都要将该文件`use require "{your_config}.lua"` 
+
+`lua/`: 管理配置文件
+- `basic.lua`: nvim的基本设置，如：是否显示行号这些
+- `keybindings.lua`: 按键映射配置
+- `lsp/`: lsp 语言配置
+  - `setup.lua` : 各种语言的lsp管理文件, 要添加什么语言在里面配置
+  - `nvim-cmp.lua`: 代码补全配置
+  - `cpp.lua` , `lua.lua` , `python.lua`: 要安装什么语言，就要有个对应的lua文件, 然后加入到`setup.lua` 文件中
+- `plugin-config/`: 插件配置管理
+  - `{plug_name}.lua`: 对应使用什么插件就设置插件名+.lua, 方便使用该插件的`setup()`方法，添加好配置后，使用`PackerSync` 进行插件安装
+
+> `use require "{plug_config}"` 会默认从lua文件夹下面寻找，并且不要lua后缀
+
+### 手动安装模块
+
+使用[packer.nvim](https://github.com/wbthomason/packer.nvim)进行包管理
+
+插件管理文件为`plugins.lua`, 使用命令`:PackerSync`进行插件安装与更新
+
+```
+1. 将下载好的GitHub模块放到路径: `~/.local/share/nvim/site/pack/packer/start` 
+2. 如果想使用本地插件，比如网络不好的时候，可以使用 use `~/.local/share/nvim/site/pack/packer/start/{your_package}`
 ```
 
 > 说明: lazy loading 指的是，只有某些事件触发，才会调用插件，这类插件放置在opt目录下，start目录下存放着当nvim启动就立刻加载的插件
@@ -91,10 +141,6 @@ ubuntu:
 ```
 apt install ripgrep
 ```
-
-TODO:
-1. 说明下各个模块需要注意的地方
-2. 说明下整个文件的结构
 
 # 推荐文章
 
@@ -129,6 +175,13 @@ TODO:
 ma 记录标签
 Ma 记录全局标签，可以多个文件跳转
 ```
+
+### oscyank
+
+有时候需要将服务器上的文本复制粘贴到本地，对于Mac OS最好的插件就是osyank
+
+- oscyank, 服务器上复制，Mac本地可以粘贴: https://github.com/ojroques/vim-oscyank
+
 
 ## jupyter & vim 配置
 
@@ -190,32 +243,3 @@ call plug#end()
    则是不能使用插件命令的
 ```
 
-## oscyank
-
-有时候需要将服务器上的文本复制粘贴到本地，对于Mac OS最好的插件就是osyank
-
-- oscyank, 服务器上复制，Mac本地可以粘贴: https://github.com/ojroques/vim-oscyank
-
-## nerd fonts
-
-推荐字体Hack Nerd font：https://github.com/ryanoasis/vim-devicons
-
-下载方式：
-
-```
-cd ~/.config/nvim && mkdir patched-fonts
-cd patched-fonts
-git init
-git remote add origin https://github.com/ryanoasis/nerd-fonts
-git config core.sparsecheckout true
-echo "Hack" >> .git/info/sparse-checkout
-git pull --depth 1 origin master 
-cd ..
-chmod +x install.sh
-./install.sh Hack
-```
-
-同时本地也要进行同样设置，如果服务器安装了这个字体，但是本地iterm2没有安装，还
-是不能显示.
-
-如果是在服务器上操作完，本地操作如上

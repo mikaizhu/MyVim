@@ -8,9 +8,9 @@ local opt = {
   silent = true
 }
 -- map函数的作用域
-map("i", "jj", "<ESC>:w<CR>", opt)
+map("i", "jj", "<ESC>", opt)
 map("n", "q", ":w | qa<CR>", opt)
-map("n", "<leader>q", ":Bdelete!<CR>", opt) -- close current buffer
+map("n", "<leader>q", ":w | :Bdelete!<CR>", opt) -- close current buffer
 map("n", "U", "<C-r>", opt)
 map("n", "J", "5j", opt)
 map("n", "K", "5k", opt)
@@ -108,6 +108,15 @@ vim.api.nvim_exec(
 ]],
 	false
 )
+
+-- hop motions
+-- place this in one of your configuration file(s)
+map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opt)
+map('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opt)
+map('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", opt)
+map('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", opt)
+map('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opt)
+map('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opt)
 
 -- map函数的作用域
 local pluginKeys = {}
