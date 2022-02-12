@@ -7,11 +7,16 @@
 - zsh
 - ohmyzsh
 
-**直接使用本配置**:
+**use this config**:
 
 ```
 git clone https://github.com/mikaizhu/MyVim.git && cd Myvim && sh install.sh
 ```
+**recomments**:
+
+- [AstroVim](https://github.com/kabinspace/AstroVim)
+- [learn-neovim-lua[中文]](https://github.com/nshen/learn-neovim-lua) 
+- [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch) 
 
 **basic learning**:
 - learn lua from [here](https://nvchad.github.io/getting-started/learn-lua)
@@ -151,13 +156,6 @@ source $HOME/.config/nvim/fast-move.vim
 
 ## 插件安装方法
 
-我希望使用的功能：
-
-- vim能编辑所有程序，能搜索文件(fzf)
-- vim中能调用命令行(floaterm)
-- vim中能debug(vim spector)
-- vim中各种函数可以进行文件跳转(TODO)
-
 使用vim plug进行插件管理：
 
 ```
@@ -191,13 +189,13 @@ call plug#end()
    则是不能使用插件命令的
 ```
 
-## 复制粘贴插件
+## oscyank
 
 有时候需要将服务器上的文本复制粘贴到本地，对于Mac OS最好的插件就是osyank
 
-- osyank, 服务器上复制，Mac本地可以粘贴: https://github.com/ojroques/vim-oscyank
+- oscyank, 服务器上复制，Mac本地可以粘贴: https://github.com/ojroques/vim-oscyank
 
-## vim字体插件安装
+## nerd fonts
 
 推荐字体Hack Nerd font：https://github.com/ryanoasis/vim-devicons
 
@@ -220,211 +218,3 @@ chmod +x install.sh
 是不能显示.
 
 如果是在服务器上操作完，本地操作如上
-
-## 主题安装
-
-主题推荐：https://github.com/morhetz/gruvbox/wiki/Installation
-
-```
-vi init.vim
-Plug 'morhetz/gruvbox'
-autocmd vimenter * ++nested colorscheme gruvbox
-```
-
-## vim terminal config | floaterm
-
-- 使用的插件为：https://github.com/voldikss/vim-floaterm
-
-使用配置如下：
-
-```
-" floaterm config
-" 设置shell不是浮动，而是右边option：split vsplit float
-let g:floaterm_wintype='vsplit'
-" 设置为一半
-let g:floaterm_height=0.5
-let g:floaterm_width=0.5
-"让terminal打开默认的是当前项目的目录下"
-let g:floaterm_borderchars='.root'
-
-nnoremap <Leader>fn :FloatermNew
-nnoremap <Leader>sh :FloatermShow<CR>
-nnoremap <Leader>fk :FloatermKill<CR>
-nnoremap <Leader>fs :FloatermSend
-vnoremap <Leader>fs :FloatermSend<CR>
-
-nnoremap <Leader>ft :FloatermToggle<CR>
-"进入命令行模式后，要用tnoremap进行映射
-tnoremap <silent> <C-[> <C-\><C-n>:FloatermToggle<CR>
-" 从termial切换窗口, 有时候会和tmux按键冲突，可以替换成其他的
-tnoremap <silent> <C-b>h <C-\><C-n><C-w>h
-nnoremap <silent> <C-b>l <C-w>l
-```
-
-比较有用的技巧：按V选中文本后，然后输入<Leader>fs, 就会将选中内容输入到termial
-中
-
-如：
-
-```
-;fn ipython
-Vjj
-;fs
-```
-
-# Ranger & telescope安装
-
-Ranger是用在命令行中的: https://github.com/ranger/ranger
-Telescope是在vim中运行的：https://github.com/nvim-telescope/telescope.nvim
-
-安装：
-
-```
-# 两种安装方式
-sudo apt install ranger
-pip install ranger-fm
-```
-
-如果是用的zsh
-
-```
-vi ~/.zshenv or vi ~/.bash_profile
-alias ranger=rg
-```
-
-ranger 会自动读取你的vim or neovim配置, 通过h j k l来移动文件目录, h l 切换上
-下级目录
-
-让ranger使用nvim打开文件
-```
-vi ~/.zshenv or vi ~/.bash_profile
-export VISUAL=nvim
-export PAGER=more
-```
-
-# CoC.nvim config
-
-nodejs: https://nodejs.org/en/download/
-coc.nvim: https://github.com/neoclide/coc.nvim
-
-1. 首先要安装nodejs
-
-> 可以使用源码安装，如果服务器没有网，可以本地下载，然后上传到服务器进行安装,
-> 注意检查版本`nodejs -v`，如果版本不对，下载最新版本，使用whereis nodejs, 然
-> 后sudo cp nodejs/bin/node /usr/bin
-
-
-# TODO
-
-- [x] vim terminal config
-- [x] vim teloscop
-- [x] vim fzf
-- [x] vim coc nvim 
-- [x] vim code language config eg: python cpp
-- [x] vim code complete config
-- [ ] vim markdown plugin
-
-# 常用网站
-
-vim插件安装网站：https://vimawesome.com/
-
-# vim 插件安装
-
-
-# fzf安装和常用命令说明
-
-可以在vim中使用fzf，也可以在terminal中使用fzf
-
-```
-fzf ** + tab可以进行模糊搜索
-cd ** + tab
-vi ** + tab
-```
-
-使用方式：首先切换到项目目录下，然后使用fzf
-
-常用的命令：
-
-```
-// 退出只需要 esc + q
-:Rg 模糊搜索，可以查看文件内容
-```
-
-
-# vimspector安装和常用命令说明
-
-网址：
-- https://github.com/puremourning/vimspector#quick-start
-- 中文参考配置: https://www.shuzhiduo.com/A/lk5a13l051/
-- 详细的配置: https://puremourning.github.io/vimspector/configuration.html#debug-adapter-configuration
-- 初略的配置: https://puremourning.github.io/vimspector-web/demo-setup.html#putting-it-together
-
-安装：Plugin 'puremourning/vimspector'
-
-> `/Users/zwl/.cache/nvim/plugged/vimspector` 
-
-安装需要debug的语言: `./install_gadget.py --enable-cpp --enable-python
---enable-bash` 
-
-或者直接`--enable-all` 安装所有语言的依赖
-
-**开始debug**: 
-
-如果要debug你的程序:
-- 应该告诉vimspector你的debug adapter是什么
-- 如何connect你的应用
-
-首先在项目根目录下创建一个`.vimspector.json`, 当程序要开始debug的时候，会从当
-前目录不断向父目录寻找这个文件配置并使用
-
-如果要debug python文件，在python文件目录下配置.vimspector.json文件，并将内容填
-入
-
-```
-{
-  "adapters": {
-    "debugpy": {
-      "command": [
-        "python",
-        "-m",
-        "debugpy.adapter"
-      ],
-      "name": "debugpy",
-      "configuration": {
-        "python": "python"
-      }
-    }
-  },
-  "configurations": {
-    "run - debugpy": {
-      "adapter": "debugpy",
-      "configuration": {
-        "request": "launch",
-        "type": "python",
-        "cwd": "${workspaceRoot}",
-        "program": "${file}",
-        "stopOnEntry": true,
-        "console": "integratedTerminal"
-      },
-      "breakpoints": {
-        "exception": {
-          "raised": "N",
-          "uncaught": ""
-        }
-      }
-    }
-  }
-}
-```
-
-启动debug：:call vimspector#Launch()
-向下debug：:call vimspector#Continue()
-设置断点： :call vimspector#ToggleBreakpoint()
-
-```
-vimspector#ToggleBreakpoint()
-vimspector#StepOver()
-vimspector#StepInto()
-vimspector#StepOut()
-```
-
