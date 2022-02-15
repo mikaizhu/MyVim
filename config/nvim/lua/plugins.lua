@@ -92,5 +92,5 @@ return require('packer').startup(function()
   }
 
   use 'karb94/neoscroll.nvim'
-
+  use "Pocco81/AutoSave.nvim"
 end)

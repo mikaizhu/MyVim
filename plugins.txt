@@ -75,3 +75,6 @@ https://github.com/max397574/better-escape.nvim
 
 # smoth scroll
 https://github.com/karb94/neoscroll.nvim
+
+# autosave
+https://github.com/Pocco81/AutoSave.nvim

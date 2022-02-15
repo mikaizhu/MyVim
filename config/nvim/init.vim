@@ -23,6 +23,7 @@ lua require('plugin-config/hop')
 lua require('plugin-config/vim-illuminate')
 lua require('plugin-config/better-escape')
 lua require('plugin-config/neoscroll')
+lua require('plugin-config/autosave')
 
 " lsp
 lua require('lsp/setup')
