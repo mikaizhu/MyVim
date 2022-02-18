@@ -78,3 +78,12 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
+
+-- 主题设置
+vim.cmd("let g:sonokai_style = 'andromeda'")
+vim.cmd("colorscheme sonokai")
+vim.cmd("autocmd BufEnter * setl formatoptions-=o")
+-- vim.cmd("autocmd FileType * setlocal textwidth=10")
+vim.cmd("set textwidth=80")
+vim.cmd("set formatoptions+=t")
+
