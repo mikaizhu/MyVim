@@ -32,7 +32,12 @@ Make sure to delete this folder ~/.local/share/nvim on Linux/macOS or ~\AppData\
 注意:
 - python不会自动缩进: treesitter冲突，indent改成false
 
+## Bug
+- [] python format有问题
+- [] 输入`:bd`会关闭所有buffer
+- [] cmp代码提示比较烦，会自动显示档到视线，应该换成手动触发
+- [] 如何隐藏错误提示，按键才会显示, 但错误标志会有
+
 ## TODO
 - [] add snip: https://zjp-cn.github.io/neovim0.6-blogs/nvim/luasnip/doc1.html
-- [] python format有问题
 - [] 添加插件illuminate, 因为有时候需要知道变量
