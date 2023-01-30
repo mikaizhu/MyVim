@@ -1,6 +1,4 @@
-#!/usr/bin bash
-mv ~/.config/nvim ~/.config/nvimbackup
-mkdir -p ./config/nvim && cp -r ./config/nvim/* ~/.config/nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+mv ~/.config/nvim ~/.config/NVIM.BAK
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+cp -r custom ~/.config/nvim/lua
 nvim +PackerSync
