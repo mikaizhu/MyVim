@@ -35,3 +35,4 @@ Make sure to delete this folder ~/.local/share/nvim on Linux/macOS or ~\AppData\
 ## TODO
 - [] add snip: https://zjp-cn.github.io/neovim0.6-blogs/nvim/luasnip/doc1.html
 - [] python format有问题
+- [] 添加插件illuminate, 因为有时候需要知道变量
