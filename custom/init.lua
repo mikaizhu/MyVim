@@ -6,8 +6,15 @@ vim.g.mapleader = ";"
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.wo.signcolumn = "yes"
+
 vim.o.mouse = "a"
 
+-- smart indent
+vim.o.expandtab = true
+vim.bo.expandtab = true
+vim.o.autoindent = true
+vim.bo.autoindent = true
+vim.o.smartindent = true
 
 -- 打开时自动定位到上次关闭位置
 vim.api.nvim_create_autocmd(

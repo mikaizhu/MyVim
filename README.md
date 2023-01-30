@@ -29,5 +29,9 @@ Make sure to delete this folder ~/.local/share/nvim on Linux/macOS or ~\AppData\
 
 4. clone custom file
 
+注意:
+- python不会自动缩进: treesitter冲突，indent改成false
+
 ## TODO
 - [] add snip: https://zjp-cn.github.io/neovim0.6-blogs/nvim/luasnip/doc1.html
+- [] python format有问题

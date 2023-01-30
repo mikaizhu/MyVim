@@ -12,7 +12,7 @@ if e ~= nil then
   goimports = goimports.with { extra_args = { "-local", e } }
 end
 
--- can find sources in: 
+-- can find sources in:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
   -- Go
@@ -23,13 +23,13 @@ local sources = {
 
   -- Shell
   b.formatting.shfmt,
-  b.diagnostics.shellcheck,
+  b.code_actions.shellcheck,
 
   -- cpp
   b.formatting.clang_format,
 
   -- python
-      null_ls.builtins.formatting.isort,
+  null_ls.builtins.formatting.isort,
 
   -- markdown and others
   null_ls.builtins.formatting.prettierd,

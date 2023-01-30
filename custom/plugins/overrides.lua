@@ -16,6 +16,9 @@ M.alpha = {
 }
 
 M.treesitter = {
+  indent = {
+    enable = false
+  },
   ensure_installed = {
     -- HTML CSS
     "html",
