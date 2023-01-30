@@ -1,3 +1,6 @@
+# 说明
+现在我使用NvChad作为我的配置，参考custom分支
+
 # MyVim配置说明
 **requirements**:
 
