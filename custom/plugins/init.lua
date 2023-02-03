@@ -4,13 +4,6 @@
 -- local overrides = require "custom.plugins.overrides"
 local overrides = require "custom.plugins.overrides"
 local plugins = {
-  -- lsp
-  ["neovim/nvim-lspconfig"] = {
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.configs.lspconfig"
-    end,
-  },
     -- overrde plugin configs
   ["nvim-treesitter/nvim-treesitter"] = {
     override_options = overrides.treesitter,
@@ -19,6 +12,21 @@ local plugins = {
   ["williamboman/mason.nvim"] = {
     override_options = overrides.mason,
   },
+  -- lsp
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.configs.lspconfig"
+    end,
+  },
+
+  ["williamboman/mason-lspconfig.nvim"] = {
+   after = "mason.nvim",
+   config = function()
+     require "custom.plugins.configs.mason-lspconfig"
+     require "plugins.configs.lspconfig"
+   end,
+  },
 
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
@@ -26,6 +34,13 @@ local plugins = {
       require "custom.plugins.configs.null-ls"
     end,
   },
+  ["jay-babu/mason-null-ls.nvim"] = {
+    after = {"mason.nvim"},
+    config = function ()
+      require("custom.plugins.configs.mason-null")
+    end
+  },
+
   -- easymotion
   ["phaazon/hop.nvim"] = {
     opt = true,

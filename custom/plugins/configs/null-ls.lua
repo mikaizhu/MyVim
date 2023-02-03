@@ -5,34 +5,34 @@ if not present then
 end
 
 local b = null_ls.builtins
-local goimports = b.formatting.goimports
 
 local e = os.getenv "GOIMPORTS_LOCAL"
 if e ~= nil then
-  goimports = goimports.with { extra_args = { "-local", e } }
+  b.formatting.goimports = b.formatting.goimports.with { extra_args = { "-local", e } }
 end
 
 -- can find sources in:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
   -- Go
-  goimports,
-
+  b.formatting.goimports,
   -- Lua
   b.formatting.stylua,
-
   -- Shell
   b.formatting.shfmt,
   b.code_actions.shellcheck,
+  b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
 
   -- cpp
   b.formatting.clang_format,
 
   -- python
-  null_ls.builtins.formatting.isort,
+  b.formatting.autopep8,
+  b.formatting.isort,
+  --b.diagnostics.flake8,
 
   -- markdown and others
-  null_ls.builtins.formatting.prettierd,
+  b.formatting.prettierd,
 }
 
 null_ls.setup {

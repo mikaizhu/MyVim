@@ -13,53 +13,26 @@ M.alpha = {
       "    Your day is going to be a real hoot!  ",
     },
   },
+  -- buttons = {
+  --  type = "group",
+  --  val = {
+  --    button("f", " Find File  ", ":Telescope find_files<CR>"),
+  --    button("o", "  Recent File  ", ":Telescope oldfiles<CR>"),
+  --    button("w", " Find Word  ", ":Telescope live_grep<CR>"),
+  --    --button("q", "  Quit  ", ":q<CR>"),
+  --  },
+  -- opts = {
+  --    spacing = 1,
+  --  }
+  -- }
 }
 
 M.treesitter = {
   indent = {
+    -- 取消indent否则会和python的lsp发生冲突
     enable = false
   },
-  ensure_installed = {
-    -- HTML CSS
-    "html",
-    "css",
-    "scss",
-
-    -- TypeScript, JavaScript
-    "javascript",
-    "typescript",
-    "tsx",
-    -- "tailwindcss-language-server",
-
-    -- Rust
-    "rust",
-
-    -- Go
-    "go",
-    "gomod",
-
-    -- Vim
-    "vim",
-    "lua",
-
-    -- PHP
-    "php",
-
-    -- Json
-    "json",
-
-    -- Markdown
-    "markdown",
-
-    -- Yaml
-    "yaml",
-
-    -- Docker
-    "dockerfile",
-
-    -- SQL
-    "sql",
-  },
+  ensure_installed = { "html", "css", "scss", "javascript", "typescript", "tsx", "rust", "go", "gomod", "vim", "lua", "php", "json", "markdown", "yaml", "dockerfile", "sql", "python" },
 }
 
 M.mason = {
@@ -69,53 +42,6 @@ M.mason = {
       package_installed = " ",
       package_uninstalled = " ",
     },
-  },
-
-  ensure_installed = {
-    -- python
-    "pyright",
-
-    -- cpp
-    "clangd",
-
-    -- Lua
-    "lua-language-server",
-    "stylua",
-
-    -- HTML CSS
-    "css-lsp",
-    "html-lsp",
-
-    -- TypeScript, JavaScript
-    "deno",
-    "typescript-language-server",
-    "eslint_d",
-
-    -- Rust
-    "rust-analyzer",
-    "rustfmt",
-
-    -- Go
-    "gopls",
-    "goimports",
-
-    -- Shell
-    "shfmt",
-    "shellcheck",
-
-    -- PHP
-    "intelephense",
-    "php-cs-fixer",
-    "phpcs",
-
-    -- Yaml
-    "yaml-language-server",
-
-    -- Json
-    "json-lsp",
-
-    -- Docker
-    "dockerfile-language-server",
   },
 }
 
