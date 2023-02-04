@@ -56,7 +56,7 @@ Make sure to delete this folder ~/.local/share/nvim on Linux/macOS or ~\AppData\
 
 ## Bug
 - [x] python format有问题
-- [ ] 输入`:bd`会关闭所有buffer
+- [x] 输入`:bd`会关闭所有buffer(用leader x关闭buffer)
 - [ ] cmp代码提示比较烦，会自动显示档到视线，应该换成手动触发
 - [ ] 如何隐藏错误提示，按键才会显示, 但错误标志会有
 
