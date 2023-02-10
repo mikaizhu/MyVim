@@ -1,7 +1,7 @@
 # 基于Nvchad的nvim配置
 
 - Github: https://github.com/NvChad/NvChad
-- doc: https://nvchad.com/config/Walkthrough
+- DOC: https://nvchad.com/quickstart/install
 
 ## Install
 
@@ -25,12 +25,36 @@ Make sure to delete this folder ~/.local/share/nvim on Linux/macOS or ~\AppData\
 
 2. Install Nerd Font and ripgrep
 
+```
+# macOS 
+brew install ripgrep
+
+# ubuntu
+sudo apt install ripgrep
+```
+
 3. Install NvChad
+
+```
+# macOS or linux
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+```
 
 4. clone custom file
 
 ## Notice:
+
 - python不会自动缩进: treesitter冲突，indent改成false
+
+nvim-treesitter会出现CLI not found报错：
+
+- 输入`:checkhealth nvim-treesitter` 
+
+```
+`tree-sitter` executable not found (parser generator, only needed for :TSInstallFromGrammar, not required for :TSInstall)
+```
+
 
 说明下`nvim-lspconfig`,`mason`,`null-ls`的关系：
 - 整个nvim中分为lsp-client和lsp-server，要安装了lsp-client后，才能链接到lsp-server，server提供了代码补全和format等操作
