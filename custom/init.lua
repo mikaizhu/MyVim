@@ -3,6 +3,7 @@
 -- https://github.com/qixinbo/NvChad/tree/custom/lua/custom
 -- overwrite options
 vim.g.mapleader = ";"
+vim.g.auto_save = 1
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 vim.wo.signcolumn = "yes"

@@ -85,5 +85,5 @@ nvim-treesitter会出现CLI not found报错：
 - [ ] 如何隐藏错误提示，按键才会显示, 但错误标志会有
 
 ## TODO
+- [ ] 打通ssh中neovim复制问题
 - [ ] add snip: https://zjp-cn.github.io/neovim0.6-blogs/nvim/luasnip/doc1.html
-- [ ] 添加插件illuminate, 因为有时候需要知道变量
