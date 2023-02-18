@@ -56,6 +56,9 @@ local plugins = {
     override_options = overrides.alpha,
   },
 
+  ["nvim-tree/nvim-tree.lua"] = {
+    override_options = overrides.nvimtree,
+  }
 }
 
 return plugins

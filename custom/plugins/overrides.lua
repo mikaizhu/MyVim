@@ -45,4 +45,13 @@ M.mason = {
   },
 }
 
+M.nvimtree = {
+  view = {
+    adaptive_size = true,
+    side = 'left',
+    width = 25,
+    hide_root_folder = false,
+  },
+}
+
 return M
