@@ -45,6 +45,19 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 ## Notice:
 
+如何重写插件配置：
+1. 在`custom/plugins/overrides.lua`里面添加要修改的配置
+2. 然后在`custom/plugins/init.lua` 里面引入该配置
+
+```
+["goolord/alpha-nvim"] = {
+  disable = false,
+  override_options = overrides.alpha,
+},
+```
+3. 使用`PackerSync` 更新配置
+
+解决python缩进问题:
 - python不会自动缩进: treesitter冲突，indent改成false
 
 nvim-treesitter会出现CLI not found报错：
@@ -54,7 +67,6 @@ nvim-treesitter会出现CLI not found报错：
 ```
 `tree-sitter` executable not found (parser generator, only needed for :TSInstallFromGrammar, not required for :TSInstall)
 ```
-
 
 说明下`nvim-lspconfig`,`mason`,`null-ls`的关系：
 - 整个nvim中分为lsp-client和lsp-server，要安装了lsp-client后，才能链接到lsp-server，server提供了代码补全和format等操作
