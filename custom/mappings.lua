@@ -2,7 +2,12 @@ local M = {}
 
 M.other = {
   n = {
-    ["?"] = { ":Telescope keymaps<cr>", "help key" },
+    -- ["?"] = { ":Telescope keymaps<cr>", "help key" },
+    ["?"] = {
+      function()
+        require('telescope.builtin').lsp_document_symbols()
+      end,
+    },
     ["q"] = { ":q<cr>", "" },
     ["Q"] = { ":qa<cr>", "" },
     ["U"] = { "<c-r>", "undo" },
@@ -14,8 +19,8 @@ M.other = {
     ["sk"] = { ":resize -10<CR>", "resize" },
     ["J"] = { "5j", "fast move" },
     ["K"] = { "5k", "fast move" },
-    ["H"] = { "5h", "fast move" },
-    ["L"] = { "5l", "fast move" },
+    -- ["H"] = { "5h", "fast move" },
+    -- ["L"] = { "5l", "fast move" },
   },
   v = {
     ["sc"] = { "<c-w>c<cr>", "close current window" },
@@ -23,8 +28,8 @@ M.other = {
     ["sq"] = { "<c-w>c<cr>", "close all window" },
     ["J"] = { "5j", "fast move" },
     ["K"] = { "5k", "fast move" },
-    ["H"] = { "5h", "fast move" },
-    ["L"] = { "5l", "fast move" },
+    -- ["H"] = { "5h", "fast move" },
+    -- ["L"] = { "5l", "fast move" },
   },
 }
 
@@ -35,20 +40,27 @@ M.telescope = {
   },
 }
 
+M.trouble = {
+  n = {
+    [",x"] = {"<cmd>TroubleToggle<cr>"},
+    [",w"] = {"<cmd>TroubleToggle workspace_diagnostics<cr>"},
+  },
+}
+
 M.nvimtree = {
   n = {
     ["tt"] = { ":NvimTreeToggle<cr>", "open or close nvim tree" },
   },
 }
 
-M.hop = {
-  n = {
-    ["f"] = { ":HopWord<cr>", "hop hit all words" },
-  },
-  v = {
-    ["f"] = { ":HopWord<cr>", "hop hit all words" },
-  },
-}
+-- M.hop = {
+--   n = {
+--     ["f"] = { ":HopWord<cr>", "hop hit all words" },
+--   },
+--   v = {
+--     ["f"] = { ":HopWord<cr>", "hop hit all words" },
+--   },
+-- }
 
 M.comment = {
   plugin = true,
@@ -79,7 +91,7 @@ M.lspconfig = {
       "lsp formatting",
     },
 
-    ["S"] = {
+    ["H"] = {
       function()
         vim.lsp.buf.hover()
       end,

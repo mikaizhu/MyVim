@@ -42,14 +42,12 @@ local plugins = {
   },
 
   -- easymotion
-  ["phaazon/hop.nvim"] = {
-    opt = true,
-    event = "BufReadPost",
-    branch = "v2",
+  ['ggandor/leap.nvim'] = {
     config = function()
-      require "custom.plugins.configs.hop"
+      require("leap").add_default_mappings(true) --强制覆盖其他按键，否则可能不工作
     end,
   },
+
   -- dashboard
   ["goolord/alpha-nvim"] = {
     disable = false,
@@ -58,6 +56,26 @@ local plugins = {
 
   ["nvim-tree/nvim-tree.lua"] = {
     override_options = overrides.nvimtree,
+  },
+
+  -- trouble
+  ["folke/trouble.nvim"] = {
+    -- after = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require('custom.plugins.configs.trouble_config')
+    end
+  },
+  -- code outline
+  ["simrat39/symbols-outline.nvim"] = {
+    config = function()
+      require "custom.plugins.configs.symbols-outline"
+    end,
+  },
+  -- indent line
+  ['echasnovski/mini.indentscope'] = {
+    config = function()
+      require "custom.plugins.configs.indentscope"
+    end,
   }
 }
 

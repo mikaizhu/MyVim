@@ -27,8 +27,9 @@ local sources = {
   b.formatting.clang_format,
 
   -- python
-  b.formatting.autopep8,
-  b.formatting.isort,
+  -- b.formatting.autopep8,
+  -- b.formatting.isort,
+  b.formatting.black,
   --b.diagnostics.flake8,
 
   -- markdown and others
