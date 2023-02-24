@@ -93,8 +93,8 @@ nvim-treesitter会出现CLI not found报错：
 ## Bug
 - [x] python format有问题
 - [x] 输入`:bd`会关闭所有buffer(用leader x关闭buffer)
-- [ ] cmp代码提示比较烦，会自动显示档到视线，应该换成手动触发
-- [ ] 如何隐藏错误提示，按键才会显示, 但错误标志会有
+- [x] cmp代码提示比较烦，会自动显示档到视线，应该换成手动触发
+- [x] 如何隐藏错误提示，按键才会显示, 但错误标志会有
 
 ## TODO
 - [ ] 打通ssh中neovim复制问题
