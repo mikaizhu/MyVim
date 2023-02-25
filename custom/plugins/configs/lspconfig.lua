@@ -15,7 +15,7 @@ vim.diagnostic.config({
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local servers = { "html",  "clangd", "jsonls", "sumneko_lua", "pyright" }
+local servers = { "html",  "clangd", "jsonls", "lua_ls", "pyright" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({

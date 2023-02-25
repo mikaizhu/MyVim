@@ -15,7 +15,7 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
   -- Go
-  b.formatting.goimports,
+  -- b.formatting.goimports,
   -- Lua
   b.formatting.stylua,
   -- Shell
@@ -27,9 +27,9 @@ local sources = {
   b.formatting.clang_format,
 
   -- python
-  -- b.formatting.autopep8,
+  b.formatting.autopep8,
   -- b.formatting.isort,
-  b.formatting.black,
+  -- b.formatting.black,
   --b.diagnostics.flake8,
 
   -- markdown and others
