@@ -90,6 +90,15 @@ nvim-treesitter会出现CLI not found报错：
 - 代码格式化的server列表: https://github.com/jay-babu/mason-null-ls.nvim#available-null-ls-sources
 - 代码格式化的命令(添加到null-ls文件中)：https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#formatting
 
+## Mapping
+
+```lua
+-- 折叠
+zc, fold code
+zo, open fold code
+zR, open all fold code
+```
+
 ## Bug
 - [x] python format有问题
 - [x] 输入`:bd`会关闭所有buffer(用leader x关闭buffer)

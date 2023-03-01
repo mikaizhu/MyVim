@@ -17,6 +17,13 @@ vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.smartindent = true
 
+-- treesitter 代码折叠
+vim.o.foldmethod='expr'
+vim.o.foldexpr='nvim_treesitter#foldexpr()'
+-- ref:https://github.com/nvim-treesitter/nvim-treesitter/issues/4152
+-- 打开文件时代码不折叠
+vim.o.foldlevelstart=99
+
 -- 打开时自动定位到上次关闭位置
 vim.api.nvim_create_autocmd(
   { "BufReadPost" },
