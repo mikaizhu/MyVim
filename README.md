@@ -1,5 +1,5 @@
 
-# ⚙Install
+## ⚙Install
 
 💡说明: 基于Nvchad的nvim配置(v2.0), 安装流程如下
 
@@ -31,7 +31,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 └── plugins
 ```
 
-# ⌨️常用映射
+## ⌨️常用映射
 
 ```lua
 -- 折叠
@@ -41,12 +41,12 @@ zo, open fold code
 zR, open all fold code
 ```
 
-# 📒TODO
+## 📒TODO
 - [ ] 添加一些snippets，可以参考配置1
 - [ ] 添加debug的插件，如dap
 - [ ] 添加其他的插件
 
-# 🔍参考
+## 🔍参考
 1. 参考配置：https://gitee.com/mrw954/custom
 2. 参考配置：https://github.com/NvChad/example_config
 3. 参考文档：https://nvchad.com/docs/config/walkthrough
