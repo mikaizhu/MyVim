@@ -32,7 +32,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 └── plugins
 ```
 
-# ⌨️常常用映射
+# ⌨️常用映射
 
 ```lua
 -- 折叠
