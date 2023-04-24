@@ -36,12 +36,12 @@ vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
 -- nvim tree auto close
 -- ref:https://github.com/nvim-tree/nvim-tree.lua/issues/1005#issuecomment-1115831363
 vim.api.nvim_create_autocmd("BufEnter", {
-  command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+  command = "if winnr('$') == 2 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
   nested = true,
 })
 
+-- markdown快捷键, 只在md文件中起作用
 local vim = vim
--- markdown
 vim.api.nvim_exec(
   [[
   autocmd Filetype markdown inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l

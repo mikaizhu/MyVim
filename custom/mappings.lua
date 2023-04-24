@@ -3,6 +3,7 @@ local M = {}
 M.other = {
   n = {
     -- ["?"] = { ":Telescope keymaps<cr>", "help key" },
+    -- 查找当前文件中所有变量
     ["?"] = {
       function()
         require('telescope.builtin').lsp_document_symbols()
@@ -33,34 +34,18 @@ M.other = {
   },
 }
 
-M.telescope = {
-  n = {
-    ["<leader>f"] = { "<cmd> Telescope find_files <CR>", "find files" },
-    ["<leader>g"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
-  },
-}
-
-M.trouble = {
-  n = {
-    [",x"] = {"<cmd>TroubleToggle<cr>"},
-    [",w"] = {"<cmd>TroubleToggle workspace_diagnostics<cr>"},
-  },
-}
-
 M.nvimtree = {
   n = {
     ["tt"] = { ":NvimTreeToggle<cr>", "open or close nvim tree" },
   },
 }
 
--- M.hop = {
---   n = {
---     ["f"] = { ":HopWord<cr>", "hop hit all words" },
---   },
---   v = {
---     ["f"] = { ":HopWord<cr>", "hop hit all words" },
---   },
--- }
+M.telescope = {
+  n = {
+    ["<leader>f"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    ["<leader>g"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+  },
+}
 
 M.comment = {
   plugin = true,
