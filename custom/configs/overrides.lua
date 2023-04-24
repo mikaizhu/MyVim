@@ -1,5 +1,14 @@
 local M = {}
 
+M.lsp_server = {
+  "lua_ls",
+  "clangd",
+  "pyright",
+  -- "gopls",
+  "omnisharp",
+  "bashls",
+}
+
 M.treesitter = {
   -- ref: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
   ensure_installed = {
@@ -16,10 +25,10 @@ M.treesitter = {
     "python",
   },
   indent = {
-    enable = true,
-    disable = {
-      "python" --关闭treesitter在python中的indent，防止冲突
-    },
+    enable = false,
+    -- disable = {
+    --   "python", --关闭treesitter在python中的indent，防止冲突
+    -- },
   },
 }
 
@@ -58,7 +67,7 @@ M.nvimtree = {
   },
   view = {
     adaptive_size = true,
-    side = 'left',
+    side = "left",
     width = 25,
     hide_root_folder = false,
   },
