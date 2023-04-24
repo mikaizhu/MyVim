@@ -30,7 +30,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 └── plugins
 ```
 
-## ⌨️常常用映射
+## ⌨️ 常用映射
 
 ```lua
 -- 折叠
@@ -45,7 +45,7 @@ zR, open all fold code
 2. 代码颜色：需要配置treesitter
 3. 代码format：需要配置null-ls和mason
 
-❓疑问：有点没明白`mason`,`lspconfig`,`null-ls`三者之间的关系，三者都有安装server和formatter，为什么需要配置三遍呢？
+疑问❓：有点没明白`mason`,`lspconfig`,`null-ls`三者之间的关系，三者都有安装server和formatter，为什么需要配置三遍呢？
 
 ## 📒TODO
 - [ ] 添加一些snippets，可以参考配置1
