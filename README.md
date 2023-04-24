@@ -30,6 +30,13 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 └── plugins
 ```
 
+6. 安装lsp, 在nvim中输入下面指令，会自动安装
+
+```
+:MasonInstallAll
+```
+
+
 ## ⌨️ 常用映射
 
 ```lua
