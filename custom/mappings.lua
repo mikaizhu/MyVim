@@ -6,7 +6,7 @@ M.other = {
     -- 查找当前文件中所有变量
     ["?"] = {
       function()
-        require('telescope.builtin').lsp_document_symbols()
+        require("telescope.builtin").lsp_document_symbols()
       end,
     },
     ["q"] = { ":q<cr>", "" },

@@ -1,13 +1,13 @@
 local overrides = require("custom.configs.overrides")
 
----@type NvPluginSpec[]
 local plugins = {
 
   -- Override plugin definition options
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
-    laze = false,
+    event = "VeryLazy", --让lazy插件自己判断要不要加载
+    --laze = false,
   },
 
   -- 防止与indentscope插件冲突
@@ -15,12 +15,16 @@ local plugins = {
     enabled = false,
   },
 
+  -- 快速跳转leap
   {
-    "ggandor/leap.nvim",
+    "ggandor/flit.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "ggandor/leap.nvim",
+    },
     config = function()
-      require("leap").add_default_mappings(true) --强制覆盖其他按键，否则可能不工作
+      require "custom.configs.flit"
     end,
-    lazy = false,
   },
 
   {
@@ -28,7 +32,7 @@ local plugins = {
     config = function()
       require "custom.configs.indentscope"
     end,
-    lazy = false,
+    event = "VeryLazy",
   },
 
   {
@@ -59,7 +63,6 @@ local plugins = {
     opts = overrides.treesitter,
   },
 
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -67,12 +70,6 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
 
 }
 

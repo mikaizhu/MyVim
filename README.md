@@ -1,9 +1,7 @@
-# 基于Nvchad的nvim配置(v2.0)
 
-- Github: https://github.com/NvChad/NvChad
-- Doc: https://nvchad.com/docs/quickstart/install
+# ⚙Install
 
-# Install
+💡说明: 基于Nvchad的nvim配置(v2.0), 安装流程如下
 
 1. Install Neovim >= 0.8.3
 2. Install Nerd Font 
@@ -34,20 +32,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 └── plugins
 ```
 
-# 修改配置
-
-- 参考配置：https://github.com/NvChad/example_config
-- 参考文档：https://nvchad.com/docs/config/walkthrough
-
--[x] 设置default
--[ ] 设置mapping
--[ ] 设置theme
--[ ] 设置dashborad
--[ ] 设置treesitter
--[ ] 设置lsp
--[ ] 设置null-ls
-
-# 常用映射
+# ⌨️常常用映射
 
 ```lua
 -- 折叠
@@ -56,3 +41,13 @@ zM, fold all code
 zo, open fold code
 zR, open all fold code
 ```
+
+# 📒TODO
+- [ ] 添加一些snippets，可以参考配置1
+- [ ] 添加debug的插件，如dap
+- [ ] 添加其他的插件
+
+# 🔍参考
+1. 参考配置：https://gitee.com/mrw954/custom
+2. 参考配置：https://github.com/NvChad/example_config
+3. 参考文档：https://nvchad.com/docs/config/walkthrough

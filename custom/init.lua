@@ -33,11 +33,15 @@ vim.api.nvim_create_autocmd(
 -- 取消自动注释
 vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
 
--- nvim tree auto close
--- ref:https://github.com/nvim-tree/nvim-tree.lua/issues/1005#issuecomment-1115831363
+-- nvim tree auto close, nvim tree在作为最后一个选项卡时，不不会自动关闭
+-- https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close
 vim.api.nvim_create_autocmd("BufEnter", {
-  command = "if winnr('$') == 2 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
   nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+      vim.cmd "quit"
+    end
+  end
 })
 
 -- markdown快捷键, 只在md文件中起作用

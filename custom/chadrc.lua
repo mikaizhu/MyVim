@@ -13,6 +13,14 @@ M.ui = {
   hl_override = highlights.override,
   hl_add = highlights.add,
   transparency = false,
+
+  statusline = {
+    theme = "vscode_colored",
+    separator_style = 'default',
+  },
+  cmp = {
+    style = "default",
+  }
 }
 
 M.plugins = "custom.plugins"

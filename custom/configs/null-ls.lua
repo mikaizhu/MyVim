@@ -6,6 +6,7 @@ end
 
 local b = null_ls.builtins
 
+--ref: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
 
   -- webdev stuff
@@ -17,6 +18,15 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  -- python
+  b.formatting.autopep8,
+
+  -- markdown and others
+  b.formatting.prettierd,
+
+  -- Shell
+  b.formatting.shfmt,
 }
 
 null_ls.setup {

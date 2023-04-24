@@ -1,6 +1,7 @@
 local M = {}
 
 M.treesitter = {
+  -- ref: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
   ensure_installed = {
     "vim",
     "lua",
@@ -12,16 +13,18 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "python",
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
+    disable = {
+      "python" --关闭treesitter在python中的indent，防止冲突
+    },
   },
 }
 
 M.mason = {
+  -- ref: https://mason-registry.dev/registry/list
   ensure_installed = {
     -- lua stuff
     "lua-language-server",
@@ -37,6 +40,14 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- python stuff
+    "pyright", --lsp
+    "autopep8", --formatter
+
+    -- bash stuff
+    "bash-language-server",
+    "shfmt",
   },
 }
 
@@ -47,7 +58,7 @@ M.nvimtree = {
   },
   view = {
     adaptive_size = true,
-    side = 'right',
+    side = 'left',
     width = 25,
     hide_root_folder = false,
   },
