@@ -20,7 +20,6 @@ sudo apt install ripgrep
 ```
 # macOS or linux
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-
 ```
 
 5. clone custom file, 并放置在core的同级目录下
