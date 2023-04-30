@@ -56,6 +56,7 @@ ctrl+o, go back
 3. 代码format：需要配置null-ls和mason
 
 疑问❓：有点没明白`mason`,`lspconfig`,`null-ls`三者之间的关系，三者都有安装server和formatter，为什么需要配置三遍呢？
+
 回答💡：虽然你已经使用 Mason 安装了 lspconfig 和 null-ls，但是你仍需在 Vim 配置文件中对这两个插件进行配置，以便使 Vim 正常使用它们提供的功能
 
 ## 📒TODO
