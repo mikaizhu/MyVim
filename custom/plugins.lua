@@ -1,6 +1,11 @@
 local overrides = require("custom.configs.overrides")
 
 local plugins = {
+  -- ssh copy
+  {
+    'ojroques/nvim-osc52',
+    event = "VeryLazy", --让lazy插件自己判断要不要加载
+  },
 
   -- Override plugin definition options
   {
@@ -16,6 +21,15 @@ local plugins = {
   },
 
   -- 快速跳转leap
+  -- easymotion
+  ['ggandor/leap.nvim'] = {
+    event = "VeryLazy",
+    config = function()
+      -- require "custom.config.leap"
+      require("leap").add_default_mappings(true)
+    end,
+  },
+
   {
     "ggandor/flit.nvim",
     event = "VeryLazy",
@@ -27,6 +41,8 @@ local plugins = {
     end,
   },
 
+
+  -- 对齐线
   {
     'echasnovski/mini.indentscope',
     config = function()
