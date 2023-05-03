@@ -46,9 +46,26 @@ zM, fold all code
 zo, open fold code
 zR, open all fold code
 
+-- lsp
 gd, go definition
 ctrl+o, go back
+
+-- terminal
+-- <A> 在Mac中表示Option键，在其他系统中表示Alt键
+leader+pt, use telescope toggle terminal
+A-i, float terminal
+A-h, horizontal term
+A-v
+ctrl+x, escape terminal mode
+leader+h, horizontal term
+leader+v
+leader+x, hide and exit terminal
+
+-- cheet sheet
+-- 1. 按下某个触发键，然后等几秒，下面就会出现提示
+leader+ch, open cheet sheet
 ```
+
 ## ⚠️ 注意事项
 
 1. 代码补全：需要配置lspconfig，找到相应的server
