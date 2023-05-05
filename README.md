@@ -8,10 +8,10 @@
 
 ```
 # macOS 
-brew install ripgrep
+brew install ripgrep, npm , node
 
 # ubuntu
-sudo apt install ripgrep
+sudo apt install ripgrep, npm, node
 ```
 
 4. Install NvChad
@@ -23,6 +23,11 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 5. clone custom file, 并放置在core的同级目录下
 
+```
+cd ~/.config/nvim/lua/ && git clone https//github.com/mikaizhu/MyVim.git --depth 1 && cp -r MyVim/custom . && rm -rf MyVim
+```
+
+目录结构
 ```
 .
 ├── core
@@ -63,9 +68,7 @@ leader+x, hide and exit terminal
 
 -- cheet sheet
 -- 1. 按下某个触发键，然后等几秒，下面就会出现提示
-leader+ch, open cheet sheet
-```
-
+leader+ch, open cheet sheet ```
 ## ⚠️ 注意事项
 
 1. 代码补全：需要配置lspconfig，找到相应的server
