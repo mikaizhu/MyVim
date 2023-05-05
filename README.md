@@ -68,7 +68,10 @@ leader+x, hide and exit terminal
 
 -- cheet sheet
 -- 1. 按下某个触发键，然后等几秒，下面就会出现提示
-leader+ch, open cheet sheet ```
+leader+ch, open cheet sheet 
+
+```
+
 ## ⚠️ 注意事项
 
 1. 代码补全：需要配置lspconfig，找到相应的server
