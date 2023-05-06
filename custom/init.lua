@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd("FileType", { command = "set formatoptions-=o" })
 -- 因为我的方案是rime中Control+Space切换中英文，这里在vim中切换，会检测到这两个按键
 -- 所以使用下面设置取消这两个按键的作用
 vim.api.nvim_set_keymap('n', '<C-Space>', '', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', 's', '', { silent = true })
 
 
 -- nvim tree auto close, nvim tree在作为最后一个选项卡时，不不会自动关闭

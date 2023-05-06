@@ -70,6 +70,10 @@ leader+x, hide and exit terminal
 -- 1. 按下某个触发键，然后等几秒，下面就会出现提示
 leader+ch, open cheet sheet 
 
+-- nvim tree
+:help nvim-tree-mappings -- search nvim tree mappings
+ctrl+x -- split window to navigate file
+ctrl+v -- vertical split
 ```
 
 ## ⚠️ 注意事项
