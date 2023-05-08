@@ -24,7 +24,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 5. clone custom file, 并放置在core的同级目录下
 
 ```
-cd ~/.config/nvim/lua/ && git clone https//github.com/mikaizhu/MyVim.git --depth 1 && cp -r MyVim/custom . && rm -rf MyVim
+cd ~/.config/nvim/lua/ && git clone https://github.com/mikaizhu/MyVim.git --depth 1 && cp -r MyVim/custom . && rm -rf MyVim
 ```
 
 目录结构
