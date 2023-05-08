@@ -1,6 +1,16 @@
 local M = {}
 
-M.other = {
+M.disabled = {
+  n = {
+    ["<C-Space>"] = "",
+    ["<C-n>"] = "",
+    ["<leader>tk"] = "",
+    ["<C-s>"] = "",
+    ["<C-c>"] = "",
+  },
+}
+
+M.general = {
   n = {
     -- ["?"] = { ":Telescope keymaps<cr>", "help key" },
     -- 查找当前文件中所有变量
@@ -30,6 +40,19 @@ M.other = {
   },
 }
 
+M.osc52 = {
+  -- osc yank
+  v = {
+    ["y"] = {
+      function()
+        require("osc52").copy_visual()
+      end,
+      "copy",
+    },
+  },
+}
+
+
 M.nvimtree = {
   n = {
     ["tt"] = { ":NvimTreeToggle<cr>", "open or close nvim tree" },
@@ -46,14 +69,14 @@ M.telescope = {
 M.comment = {
   plugin = true,
   -- toggle comment in both modes
-  n = {
-    ["<leader>c"] = {
-      function()
-        require("Comment.api").toggle.linewise.current()
-      end,
-      "toggle comment",
-    },
-  },
+  -- n = {
+  --   ["<leader>c"] = {
+  --     function()
+  --       require("Comment.api").toggle.linewise.current()
+  --     end,
+  --     "toggle comment",
+  --   },
+  -- },
 
   v = {
     ["<leader>c"] = {
