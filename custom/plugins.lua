@@ -21,7 +21,11 @@ local plugins = {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
+      -- init = function() vim.g.lsp_handlers_enabled = false end,
     },
+    config = function()
+      require("custom.configs.noice")
+    end,
   },
 
   -- todo comments
