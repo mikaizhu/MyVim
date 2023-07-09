@@ -1,10 +1,61 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 local plugins = {
   -- ssh copy
+  -- {
+  --   'ojroques/nvim-osc52',
+  --   event = "VeryLazy", --让lazy插件自己判断要不要加载
+  -- },
   {
-    'ojroques/nvim-osc52',
-    event = "VeryLazy", --让lazy插件自己判断要不要加载
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {
+      lsp = {
+        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      presets = {
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false, -- add a border to hover docs and signature help
+      },
+    },
+  },
+
+  -- todo comments
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  },
+  -- code outline
+  {
+    "stevearc/aerial.nvim",
+    event = "VeryLazy",
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require "custom.configs.aerial"
+    end,
+  },
+
+  -- easy align
+  {
+    "Vonr/align.nvim",
+    event = "VeryLazy",
   },
 
   -- Override plugin definition options
@@ -12,39 +63,59 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
     event = "VeryLazy", --让lazy插件自己判断要不要加载
-    --laze = false,
   },
 
   -- 防止与indentscope插件冲突
-  { "lukas-reineke/indent-blankline.nvim",
+  {
+    "lukas-reineke/indent-blankline.nvim",
     enabled = false,
   },
 
-  -- 快速跳转leap
   -- easymotion
-  ['ggandor/leap.nvim'] = {
-    event = "VeryLazy",
-    config = function()
-      -- require "custom.config.leap"
-      require("leap").add_default_mappings(true)
-    end,
-  },
-
   {
-    "ggandor/flit.nvim",
+    "folke/flash.nvim",
     event = "VeryLazy",
-    dependencies = {
-      "ggandor/leap.nvim",
+    vscode = true,
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
+      },
     },
-    config = function()
-      require "custom.configs.flit"
-    end,
   },
-
 
   -- 对齐线
   {
-    'echasnovski/mini.indentscope',
+    "echasnovski/mini.indentscope",
     config = function()
       require "custom.configs.indentscope"
     end,
@@ -71,7 +142,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -86,7 +157,6 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
 }
 
 return plugins

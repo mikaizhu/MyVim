@@ -41,7 +41,6 @@ cd ~/.config/nvim/lua/ && git clone https://github.com/mikaizhu/MyVim.git --dept
 :MasonInstallAll
 ```
 
-
 ## ⌨️ 常用映射
 
 ```lua

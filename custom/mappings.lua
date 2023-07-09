@@ -40,6 +40,31 @@ M.general = {
   },
 }
 
+M.align = {
+  x = {
+    ["aa"] = {
+      function()
+        require("align").align_to_char(1, true)
+      end,
+    },
+    ["as"] = {
+      function()
+        require("align").align_to_char(2, true, true)
+      end,
+    },
+    ["aw"] = {
+      function()
+        require("align").align_to_string(false, true, true)
+      end,
+    },
+    ["ar"] = {
+      function()
+        require("align").align_to_string(true, true, true)
+      end,
+    },
+  },
+}
+
 M.osc52 = {
   -- osc yank
   v = {
@@ -51,7 +76,6 @@ M.osc52 = {
     },
   },
 }
-
 
 M.nvimtree = {
   n = {
@@ -69,20 +93,26 @@ M.telescope = {
 M.comment = {
   plugin = true,
   -- toggle comment in both modes
-  -- n = {
-  --   ["<leader>c"] = {
-  --     function()
-  --       require("Comment.api").toggle.linewise.current()
-  --     end,
-  --     "toggle comment",
-  --   },
-  -- },
+  n = {
+    ["<leader>c"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "toggle comment",
+    },
+  },
 
   v = {
     ["<leader>c"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "toggle comment",
     },
+  },
+}
+
+M.aerial = {
+  n = {
+    ['<leader>a'] = {"<cmd>AerialToggle!<CR>", "code outline"}
   },
 }
 
