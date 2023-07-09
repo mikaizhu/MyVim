@@ -83,7 +83,11 @@ ctrl+v -- vertical split
 
 疑问❓：有点没明白`mason`,`lspconfig`,`null-ls`三者之间的关系，三者都有安装server和formatter，为什么需要配置三遍呢？
 
-回答💡：虽然你已经使用 Mason 安装了 lspconfig 和 null-ls，但是你仍需在 Vim 配置文件中对这两个插件进行配置，以便使 Vim 正常使用它们提供的功能
+回答💡：虽然你已经使用 Mason 安装了 lspconfig 和 null-ls，但是你仍需在 Vim 配置文件中对这两个插件进行配置，以便使 Vim 正常使用它们提供的功能, 为了使得代码的formatting能够正常工作，应该使用npm对软件的format进行安装，比如Python的代码格式化安装如下：
+```
+# ref: https://github.com/jose-elias-alvarez/null-ls.nvim/discussions/938
+看起来这是我的错，为了使程序null_ls.builtins.formatting.prettier正常工作，prettier应该在命令行中可用。安装npm i -g prettier解决了该错误。
+```
 
 ## 📒TODO
 - [ ] 添加一些snippets，可以参考配置1
