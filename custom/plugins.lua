@@ -1,11 +1,6 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
-  -- ssh copy
-  -- {
-  --   'ojroques/nvim-osc52',
-  --   event = "VeryLazy", --让lazy插件自己判断要不要加载
-  -- },
   {
     "folke/noice.nvim",
     event = "VeryLazy",

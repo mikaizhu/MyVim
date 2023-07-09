@@ -65,18 +65,6 @@ M.align = {
   },
 }
 
-M.osc52 = {
-  -- osc yank
-  v = {
-    ["y"] = {
-      function()
-        require("osc52").copy_visual()
-      end,
-      "copy",
-    },
-  },
-}
-
 M.nvimtree = {
   n = {
     ["tt"] = { ":NvimTreeToggle<cr>", "open or close nvim tree" },
