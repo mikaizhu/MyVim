@@ -2,10 +2,7 @@
 -- https://github.com/Eatsolx/nvim-lua/tree/master/custom
 -- https://github.com/qixinbo/NvChad/tree/custom/lua/custom
 -- overwrite options
-require "nvchad.options"
-local g = vim.g
-g.mapleader = ";"
-
+vim.g.mapleader = ";"
 vim.g.auto_save = 1
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8

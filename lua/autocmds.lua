@@ -1,0 +1,11 @@
+------------------------------------------------------------------------
+-- autocmd
+------------------------------------------------------------------------
+-- local autocmd = vim.api.nvim_create_autocmd
+-- autocmd("LspAttach", {
+--   callback = function(args)
+--     vim.schedule(function ()
+--       vim.keymap.del("n", "K")
+--     end)
+--   end,
+-- })
